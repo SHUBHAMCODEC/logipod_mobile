@@ -1,0 +1,27 @@
+[
+    {
+        "id": 1,
+        "occasionName": "Diwali",
+        "image": "/images/diwali.jpg"
+    },
+    {
+        "id": 2,
+        "occasionName": "Holi",
+        "image": "/images/holi.jpg"
+    },
+    {
+        "id": 3,
+        "occasionName": "Eid",
+        "image": "/images/eid.jpg"
+    },
+    {
+        "id": 4,
+        "occasionName": "Christmas",
+        "image": "/images/christmas.jpg"
+    },
+    {
+        "id": 5,
+        "occasionName": "Navratri",
+        "image": "/images/navratri.jpg"
+    }
+]

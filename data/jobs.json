@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "title": "Business Development Executive (Sales)",
+    "location": "Gurugram, HR",
+    "type": "Full-Time",
+    "description": "Drive growth by identifying new business opportunities in the logistics and supply chain sector. Build strong client relationships."
+  },
+  {
+    "id": 2,
+    "title": "Senior Sales Manager",
+    "location": "Mumbai, MH",
+    "type": "Full-Time",
+    "description": "Lead our regional sales team and develop strategic partnerships with enterprise-level logistics providers and manufacturers."
+  },
+  {
+    "id": 3,
+    "title": "Digital Marketing Specialist",
+    "location": "Remote / Delhi",
+    "type": "Contract",
+    "description": "Manage our social media presence, SEO campaigns, and performance marketing to increase Logipod's brand visibility globally."
+  },
+  {
+    "id": 4,
+    "title": "Full Stack Developer",
+    "location": "Bengaluru, KA",
+    "type": "Full-Time",
+    "description": "Scale our core logistics intelligence platform using React, Node.js, and advanced data visualization tools."
+  },
+  {
+    "id": 5,
+    "title": "Operations Lead",
+    "location": "Delhi, DL",
+    "type": "Full-Time",
+    "description": "Optimize last-mile delivery workflows and coordinate between tech teams and ground operations for maximum efficiency."
+  },
+  {
+    "id": 6,
+    "title": "UI/UX Designer",
+    "location": "Remote",
+    "type": "Full-Time",
+    "description": "Create intuitive and premium user interfaces for our complex B2B dashboards and client-facing mobile applications."
+  }
+]
