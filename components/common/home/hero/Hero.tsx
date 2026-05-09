@@ -90,7 +90,7 @@ const Hero = () => {
     ];
 
     return (
-        <div className="relative h-screen w-full flex flex-col items-center justify-between overflow-hidden">
+        <div className="relative h-screen sm:h-[100dvh] w-full flex flex-col items-center justify-between overflow-hidden">
             {/* Background Layer */}
             <div className="absolute inset-0 z-0 bg-black overflow-hidden pointer-events-none">
                 <div className="absolute inset-0">
@@ -148,9 +148,9 @@ const Hero = () => {
                             animate={{ opacity: 1, y: 0 }}
                             exit={{ opacity: 0, y: -20, filter: "blur(10px)" }}
                             transition={{ duration: 0.6 }}
-                            className="flex flex-col items-center justify-center text-center px-4 md:px-8"
+                            className="flex flex-col items-center justify-center text-center px-4 md:px-8 mt-[-20px] sm:mt-0"
                         >
-                            <motion.h1 className="text-3xl sm:text-5xl md:text-7xl font-extrabold text-white mb-6 md:mb-8 leading-[1.1] tracking-tight">
+                            <motion.h1 className="text-3xl sm:text-5xl md:text-7xl font-extrabold text-white mb-4 sm:mb-8 leading-[1.1] tracking-tight">
                                 {"Move Anything. Anywhere. With Total Control.".split(" ").map((word, i) => (
                                     <motion.span
                                         key={i}
@@ -173,7 +173,7 @@ const Hero = () => {
                                 initial={{ opacity: 0, filter: "blur(12px)", y: 20 }}
                                 animate={{ opacity: 1, filter: "blur(0px)", y: 0 }}
                                 transition={{ duration: 1.5, delay: 1.2, ease: "easeOut" }}
-                                className="text-sm sm:text-lg md:text-xl text-white/90 max-w-3xl mb-8 md:mb-12 leading-relaxed font-light tracking-wide text-balance px-4"
+                                className="text-[13px] sm:text-lg md:text-xl text-white/90 max-w-3xl mb-6 sm:mb-12 leading-relaxed font-light tracking-wide text-balance px-4"
                             >
                                 Logipod is a unified logistics platform powering FTL, Cross-border, and fulfillment —
                                 with real-time visibility, intelligent routing, and scalable infrastructure.
@@ -228,7 +228,7 @@ const Hero = () => {
             </div>
 
             {/* Bottom Dock - Anchored strictly to the bottom of the viewport */}
-            <div className="relative z-30 w-full h-[140px] md:h-[180px] pb-2 md:pb-4 px-4 md:px-8 shrink-0 mb-0">
+            <div className="relative z-30 w-full h-[110px] sm:h-[140px] md:h-[180px] pb-2 md:pb-4 px-4 md:px-8 shrink-0 mb-0">
                 <div className="max-w-[1500px] mx-auto h-full flex flex-nowrap overflow-x-auto lg:overflow-visible custom-scrollbar justify-start md:justify-center items-center gap-8 sm:gap-12 md:gap-20 border-t border-white/10 pt-4 md:pt-6">
                     {bottomLinks.map((item) => {
                         const isActive = activeSection === item.id || hoveredSection === item.id;

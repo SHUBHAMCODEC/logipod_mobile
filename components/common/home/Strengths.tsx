@@ -56,7 +56,7 @@ export default function Strengths() {
                 </motion.div>
 
                 {/* Right Accordion Gallery */}
-                <div className="w-full lg:w-[65%] h-[500px] md:h-[600px] flex gap-3 md:gap-4 perspective-1000">
+                <div className="w-full lg:w-[65%] h-[700px] lg:h-[600px] flex flex-col lg:flex-row gap-3 md:gap-4 perspective-1000">
                     {strengths.map((item, index) => {
                         const isExpanded = expandedIndex === index;
 
@@ -71,7 +71,7 @@ export default function Strengths() {
                                     flex: isExpanded ? "3.98 1 0%" : "1.9 1 0%"
                                 }}
                                 transition={{ duration: 0.6, ease: [0.25, 1, 0.5, 1] }}
-                                className={`relative h-full rounded-2xl overflow-hidden cursor-pointer group will-change-transform transform-gpu ${isExpanded
+                                className={`relative h-full w-full rounded-2xl overflow-hidden cursor-pointer group will-change-transform transform-gpu shrink-0 ${isExpanded
                                     ? 'shadow-[0_20px_50px_rgba(245,98,67,0.3)] border border-[#f56243]/30 z-20'
                                     : 'shadow-lg border border-transparent hover:border-[#f56243]/20 z-10'
                                     }`}
@@ -105,8 +105,8 @@ export default function Strengths() {
                                         <motion.h3
                                             layout="position"
                                             className={`font-extrabold text-white leading-tight tracking-wide transition-all duration-300 ${isExpanded
-                                                ? 'text-2xl md:text-3xl lg:text-[2rem] drop-shadow-[0_2px_10px_rgba(0,0,0,0.8)]'
-                                                : 'text-lg md:text-xl break-words whitespace-normal'
+                                                ? 'text-xl sm:text-2xl md:text-3xl lg:text-[2rem] drop-shadow-[0_2px_10px_rgba(0,0,0,0.8)]'
+                                                : 'text-sm sm:text-lg md:text-xl break-words whitespace-normal'
                                                 }`}
                                             style={{
                                                 wordBreak: isExpanded ? 'normal' : 'break-word',
