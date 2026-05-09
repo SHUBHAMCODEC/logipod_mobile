@@ -143,7 +143,7 @@ const MarqueeRow = ({ images, direction }: { images: string[], direction: 1 | -1
     return (
         <div
             ref={scrollRef}
-            className="flex overflow-hidden cursor-grab active:cursor-grabbing py-6 touch-pan-y"
+            className="flex overflow-hidden cursor-grab active:cursor-grabbing py-6 touch-pan-y select-none"
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={handleLeaveOrUp}
             onMouseDown={handleDown}
@@ -184,10 +184,10 @@ export default function Associates() {
                     <div className="absolute top-0 right-0 w-24 md:w-48 h-full bg-gradient-to-l from-[#FAFAFA] to-transparent z-20 pointer-events-none" />
 
                     {/* Top Row: Left to Right */}
-                    <MarqueeRow images={row1Logos} direction={1} />
+                    <MarqueeRow key="row-1" images={row1Logos} direction={1} />
 
                     {/* Bottom Row: Right to Left */}
-                    <MarqueeRow images={row2Logos} direction={-1} />
+                    <MarqueeRow key="row-2" images={row2Logos} direction={-1} />
                 </div>
             </div>
         </section>
