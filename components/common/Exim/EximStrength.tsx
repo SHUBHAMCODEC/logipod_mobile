@@ -13,7 +13,7 @@ import {
 const strengths = [
   {
     title: "Operational Excellence",
-    description: "Consistent, process-driven execution ensuring reliability across every shipment.",
+    description: "Consistent, process-driven execution combined with accurate HBL management to ensure reliable, compliant, and seamless shipment operations.",
     icon: Workflow,
   },
   {
@@ -44,8 +44,8 @@ const EximStrength = () => {
 
       {/* Luminous Brand Accents */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-px h-32 bg-gradient-to-b from-[#F26341]/40 to-transparent z-0" />
-      <div className="absolute top-0 left-0 w-full h-full opacity-[0.03] pointer-events-none z-0" 
-           style={{ backgroundImage: `radial-gradient(#F26341 1px, transparent 1px)`, backgroundSize: '40px 40px' }} />
+      <div className="absolute top-0 left-0 w-full h-full opacity-[0.03] pointer-events-none z-0"
+        style={{ backgroundImage: `radial-gradient(#F26341 1px, transparent 1px)`, backgroundSize: '40px 40px' }} />
 
       <div className="container mx-auto px-6 lg:px-12 relative z-10">
 
@@ -88,7 +88,7 @@ const EximStrength = () => {
             >
               {/* Static Border Layer */}
               <div className="absolute inset-0 bg-gradient-to-br from-[#F5E6D3] via-[#F26341] to-[#F5E6D3] opacity-30" />
-              
+
               {/* Inner Beige Card */}
               <div className="relative w-full h-full bg-[#FAF5EE] rounded-[38px] flex flex-col items-center text-center p-10 z-10">
                 {/* Luminous Icon Box */}

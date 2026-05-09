@@ -159,7 +159,7 @@ const Hero = () => {
                                         transition={{
                                             duration: 0.8,
                                             delay: 0.2 + (i * 0.1),
-                                            ease: [0.2, 0.65, 0.3, 0.9]
+                                            ease: [0.2, 0.65, 0.3, 0.9] as const
                                         }}
                                         className={`inline-block mr-[0.2em] ${word === "Anywhere." ? "text-[#F26341]" : ""}`}
                                     >
@@ -199,7 +199,7 @@ const Hero = () => {
                             initial={{ opacity: 0, y: 30, filter: "blur(10px)" }}
                             animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
                             exit={{ opacity: 0, y: -20, filter: "blur(10px)", transition: { duration: 0.3 } }}
-                            transition={{ duration: 0.7, ease: [0.25, 1, 0.5, 1] }}
+                            transition={{ duration: 0.7, ease: [0.25, 1, 0.5, 1] as const }}
                             className="absolute inset-0 flex items-center justify-center px-2 sm:px-4"
                         >
                             <div className="w-full h-full overflow-y-auto lg:overflow-visible flex flex-col items-center justify-start lg:justify-center pt-10 pb-48 lg:pt-0 lg:pb-0 custom-scrollbar">

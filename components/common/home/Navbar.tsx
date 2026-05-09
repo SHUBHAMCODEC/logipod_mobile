@@ -26,7 +26,7 @@ const Navbar = () => {
       href: "/#",
       items: [
         { name: "Full Truck Load", href: "/ftl" },
-        { name: "EXIM", href: "/Exim" }
+        { name: "Freight Forwarding", href: "/Exim" }
       ]
     },
     {

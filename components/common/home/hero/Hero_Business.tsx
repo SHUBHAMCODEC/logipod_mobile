@@ -61,7 +61,7 @@ const Hero_Business: React.FC<HeroBusinessProps> = ({ onClose }) => {
             filter: "blur(0px)",
             transition: {
                 duration: 1,
-                ease: [0.16, 1, 0.3, 1],
+                ease: [0.16, 1, 0.3, 1] as const,
                 staggerChildren: 0.1
             }
         },
@@ -70,13 +70,13 @@ const Hero_Business: React.FC<HeroBusinessProps> = ({ onClose }) => {
             y: -40,
             scale: 1.02,
             filter: "blur(10px)",
-            transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] }
+            transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] as const }
         }
     };
 
     const itemVariants = {
         hidden: { opacity: 0, y: 20 },
-        visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] } }
+        visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] as const } }
     };
 
     const CloseButton = ({ absolute = false }: { absolute?: boolean }) => (

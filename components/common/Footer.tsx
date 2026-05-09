@@ -104,7 +104,7 @@ export default function Footer() {
             </h3>
 
             <ul className="flex flex-col gap-4 mt-4">
-              <li><FooterLink href="/Exim">EXIM (Export-Import)</FooterLink></li>
+              <li><FooterLink href="/Exim">EXIM (Freight Forwarding)</FooterLink></li>
               <li><FooterLink href="/ftl">FTL (Full Truckload)</FooterLink></li>
               <li><FooterLink href="/warehousing">Warehousing</FooterLink></li>
               <li><FooterLink href="/tms">Tech Sol. (TMS)</FooterLink></li>

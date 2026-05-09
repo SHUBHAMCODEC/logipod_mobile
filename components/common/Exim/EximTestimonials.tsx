@@ -6,52 +6,52 @@ import { Quote, Star, ChevronLeft, ChevronRight } from "lucide-react";
 import Image from "next/image";
 
 const testimonials = [
-  {
-    company: "United Foods",
-    name: "Director of Exports",
-    content: "Logipod's seamless end-to-end management for our food exports is flawless. Their cold-chain coordination and documentation speed have been vital to our global expansion.",
-    logo: "/images/asso_img/united foods logo.svg",
-    rating: 5
-  },
-  {
-    company: "Choksi Exports",
-    name: "Global Trade Manager",
-    content: "Handling global exports requires a partner who understands complex international trade compliance. Logipod is that partner for us, providing seamless support.",
-    logo: "/images/asso_img/choksi exports logo.svg",
-    rating: 5
-  },
-  {
-    company: "Fivestar Dehydration",
-    name: "Operations Lead",
-    content: "The level of transparency and real-time oversight Logipod offers in EXIM is a game-changer. Tracking our industrial cargo across corridors gives us total peace of mind.",
-    logo: "/images/asso_img/fivestar dehydration private limited logo.svg",
-    rating: 5
-  },
-  {
-    company: "Kore International",
-    name: "Global Logistics Head",
-    content: "Logipod's expertise in cross-border trade and their robust digital tools make them an invaluable partner for our global operations and customs management.",
-    logo: "/images/asso_img/kore international logo.svg",
-    rating: 5
-  },
-  {
-    company: "Godrej",
-    name: "Supply Chain Director",
-    content: "Beyond FTL, Logipod has transformed our international shipping visibility. Their digital documentation handling saved us hundreds of man-hours last quarter.",
-    logo: "/images/asso_img/godrej logo.svg",
-    rating: 5
-  }
+    {
+        company: "United Foods",
+        name: "Director of Exports",
+        content: "We have been working with Logipod for multiple shipments, and our experience has been consistently positive. Their team is highly supportive, especially when it comes to freight management, ensuring competitive rates and smooth coordination throughout the process.   Additionally, their documentation services are reliable and well-handled, which helps avoid delays and ensures hassle-free shipments. Overall, Logipod has proven to be a dependable forwarding partner, and we appreciate their professionalism and efficiency.",
+        logo: "/images/asso_img/united foods logo.svg",
+        rating: 5
+    },
+    {
+        company: "Choksi Exports",
+        name: "Global Trade Manager",
+        content: "Handling global exports requires a partner who understands complex international trade compliance. Logipod is that partner for us, providing seamless support.",
+        logo: "/images/asso_img/choksi exports logo.svg",
+        rating: 5
+    },
+    {
+        company: "Fivestar Dehydration",
+        name: "Operations Lead",
+        content: "The level of transparency and real-time oversight Logipod offers in EXIM is a game-changer. Tracking our industrial cargo across corridors gives us total peace of mind.",
+        logo: "/images/asso_img/fivestar dehydration private limited logo.svg",
+        rating: 5
+    },
+    {
+        company: "Kore International",
+        name: "Global Logistics Head",
+        content: "Logipod's expertise in cross-border trade and their robust digital tools make them an invaluable partner for our global operations and customs management.",
+        logo: "/images/asso_img/kore international logo.svg",
+        rating: 5
+    },
+    {
+        company: "Godrej",
+        name: "Supply Chain Director",
+        content: "Beyond FTL, Logipod has transformed our international shipping visibility. Their digital documentation handling saved us hundreds of man-hours last quarter.",
+        logo: "/images/asso_img/godrej logo.svg",
+        rating: 5
+    }
 ];
 
 const TestimonialCard = ({ testimonial }: { testimonial: any }) => {
     return (
-        <motion.div 
+        <motion.div
             className="w-full h-full px-3 md:px-4 group"
             whileHover={{ scale: 1.02, y: -5, zIndex: 50 }}
             transition={{ type: "spring", stiffness: 400, damping: 25 }}
         >
             <div className="relative h-full p-6 md:p-10 rounded-[2rem] bg-white/[0.03] border border-white/10 backdrop-blur-md md:backdrop-blur-xl flex flex-col transition-all duration-500 group-hover:bg-white/[0.08] group-hover:border-white/30 shadow-2xl">
-                
+
                 <div className="absolute top-6 right-8 md:top-8 md:right-10 text-[#F26341]/10">
                     <Quote size={32} className="md:w-12 md:h-12" strokeWidth={1.5} />
                 </div>
@@ -188,7 +188,7 @@ export default function EximTestimonials() {
                 {/* Slider Container */}
                 <div className="relative px-2 md:px-20">
                     <div className="overflow-hidden py-8 md:py-12">
-                        <motion.div 
+                        <motion.div
                             className="flex"
                             animate={{
                                 x: `-${virtualIndex * (100 / visibleCards)}%`,
@@ -202,8 +202,8 @@ export default function EximTestimonials() {
                             onAnimationComplete={handleAnimationComplete}
                         >
                             {extendedTestimonials.map((testimonial, idx) => (
-                                <div 
-                                    key={idx} 
+                                <div
+                                    key={idx}
                                     className="shrink-0 flex justify-center"
                                     style={{ width: `${100 / visibleCards}%` }}
                                 >
@@ -215,7 +215,7 @@ export default function EximTestimonials() {
 
                     {/* Manual Controls */}
                     <div className="absolute top-1/2 -translate-y-1/2 left-2 md:left-4 z-30 flex">
-                        <button 
+                        <button
                             onClick={() => handleManualAction(prev)}
                             className="w-10 h-10 md:w-14 md:h-14 rounded-full border border-white/10 bg-white/10 md:bg-white/5 backdrop-blur-md md:backdrop-blur-xl flex items-center justify-center text-white hover:bg-[#F26341] hover:border-[#F26341] transition-all duration-300"
                         >
@@ -223,7 +223,7 @@ export default function EximTestimonials() {
                         </button>
                     </div>
                     <div className="absolute top-1/2 -translate-y-1/2 right-2 md:right-4 z-30 flex">
-                        <button 
+                        <button
                             onClick={() => handleManualAction(next)}
                             className="w-10 h-10 md:w-14 md:h-14 rounded-full border border-white/10 bg-white/10 md:bg-white/5 backdrop-blur-md md:backdrop-blur-xl flex items-center justify-center text-white hover:bg-[#F26341] hover:border-[#F26341] transition-all duration-300"
                         >

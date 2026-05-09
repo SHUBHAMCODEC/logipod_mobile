@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { Search, MapPin, Clock, Briefcase, ChevronRight, Filter } from "lucide-react";
+import Link from "next/link";
 import jobsData from "@/data/jobs.json";
 
 const Middle = () => {
@@ -106,11 +107,15 @@ const Middle = () => {
 
                   <div className="flex flex-wrap gap-4 mb-6 text-sm text-gray-500">
                     <div className="flex items-center gap-1.5">
-                      <MapPin className="w-4 h-4" />
+                      <MapPin className="w-4 h-4 text-[#F26341]" />
                       {job.location}
                     </div>
                     <div className="flex items-center gap-1.5">
-                      <Clock className="w-4 h-4" />
+                      <Briefcase className="w-4 h-4 text-[#F26341]" />
+                      {job.experience}
+                    </div>
+                    <div className="flex items-center gap-1.5">
+                      <Clock className="w-4 h-4 text-[#F26341]" />
                       {job.type}
                     </div>
                   </div>
@@ -119,9 +124,12 @@ const Middle = () => {
                     {job.description}
                   </p>
 
-                  <button className="w-full py-3 rounded-xl border border-gray-100 group-hover:border-[#F26341] group-hover:bg-[#F26341] group-hover:text-white text-[#272D6D] font-semibold flex items-center justify-center gap-2 transition-all duration-300">
+                  <Link 
+                    href={`/careers/${job.slug}`}
+                    className="w-full py-3 rounded-xl border border-gray-100 group-hover:border-[#F26341] group-hover:bg-[#F26341] group-hover:text-white text-[#272D6D] font-semibold flex items-center justify-center gap-2 transition-all duration-300"
+                  >
                     Apply Now <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                  </button>
+                  </Link>
                 </motion.div>
               ))
             ) : (

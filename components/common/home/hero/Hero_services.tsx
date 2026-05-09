@@ -86,13 +86,13 @@ const Hero_services: React.FC<HeroServicesProps> = ({ onClose }) => {
       opacity: 1,
       x: 0,
       filter: "blur(0px)",
-      transition: { duration: 0.5, ease: [0.16, 1, 0.3, 1] }
+      transition: { duration: 0.5, ease: [0.16, 1, 0.3, 1] as const }
     },
     exit: (direction: number) => ({
       opacity: 0,
       x: direction > 0 ? -50 : 50,
       filter: "blur(10px)",
-      transition: { duration: 0.4, ease: [0.16, 1, 0.3, 1] }
+      transition: { duration: 0.4, ease: [0.16, 1, 0.3, 1] as const }
     })
   };
 
