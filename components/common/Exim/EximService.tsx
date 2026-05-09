@@ -24,7 +24,7 @@ const headerHeadings = [
 ];
 
 const TextFlipper = ({ texts, className, delay = 3500 }: { texts: string[], className?: string, delay?: number }) => {
-  const [displayText, setDisplayText] = useState("");
+  const [displayText, setDisplayText] = useState(texts[0] || "");
   const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-50px" });
@@ -152,10 +152,10 @@ export default function EximService() {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.15, ease: "easeOut" }}
               style={{ 
-                marginLeft: `${index * 1.5}rem`, 
-                width: `calc(100% - ${index * 1.5}rem)`,
-              }}
-              className="mb-2"
+                '--desktop-ml': `${index * 1.5}rem`, 
+                '--desktop-w': `calc(100% - ${index * 1.5}rem)`,
+              } as React.CSSProperties}
+              className="mb-2 w-full lg:w-[var(--desktop-w)] lg:ml-[var(--desktop-ml)]"
             >
               <NoiseBackground
                 containerClassName="!rounded-2xl bg-[#1F2937]/90 border border-slate-700/80 p-5 md:p-6 flex flex-row items-center justify-start shadow-lg hover:bg-[#111827] transition-all duration-300 min-h-[70px]"
@@ -168,7 +168,7 @@ export default function EximService() {
                     <TextFlipper texts={[card.title]} delay={4000 + (index * 500)} />
                   </span>
                   <span className="text-[#F1623F] font-bold mx-2">-</span>
-                  <span className="text-slate-300 text-base md:text-lg font-medium truncate">
+                  <span className="text-slate-300 text-base md:text-lg font-medium line-clamp-2 md:truncate">
                     {card.desc}
                   </span>
                 </div>

@@ -84,7 +84,7 @@ const Hero_Business: React.FC<HeroBusinessProps> = ({ onClose }) => {
             initial={{ scale: 0.8, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             onClick={onClose}
-            className={`group w-10 h-10 md:w-11 md:h-11 rounded-full border-2 border-white/40 bg-black/40 hover:bg-white hover:border-white hover:scale-110 transition-all duration-300 cursor-pointer flex items-center justify-center backdrop-blur-md md:backdrop-blur-xl shrink-0 ${absolute ? 'absolute top-4 right-4' : ''}`}
+            className={`group w-10 h-10 md:w-11 md:h-11 rounded-full border-2 border-white/40 bg-black/40 hover:bg-white hover:border-white hover:scale-110 transition-all duration-300 cursor-pointer flex items-center justify-center backdrop-blur-md md:backdrop-blur-xl shrink-0 ${absolute ? 'absolute top-14 sm:top-4 right-4' : ''}`}
         >
             <X className="w-5 h-5 text-white group-hover:text-black transition-colors" />
         </motion.button>
