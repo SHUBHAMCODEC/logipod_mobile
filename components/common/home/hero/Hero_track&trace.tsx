@@ -31,12 +31,14 @@ const Hero_track_trace: React.FC<HeroTrackProps> = ({ onClose }) => {
             exit={{ opacity: 0, scale: 1.05 }}
             className="flex flex-col items-center relative w-full max-w-2xl px-4"
         >
-            <button
-                onClick={onClose}
-                className="absolute right-4 top-4 group p-2 md:p-2.5 rounded-full border border-white/20 bg-black/40 hover:bg-white hover:border-white hover:scale-110 transition-all duration-300 cursor-pointer shadow-xl backdrop-blur-md md:backdrop-blur-xl z-50"
-            >
-                <X className="w-5 h-5 text-white group-hover:text-black transition-colors" />
-            </button>
+            <div className="w-full flex justify-end mb-4 sm:mb-0 sm:absolute sm:top-4 sm:right-4 z-50 pr-2 sm:pr-0">
+                <button
+                    onClick={onClose}
+                    className="group p-2 md:p-2.5 rounded-full border border-white/20 bg-black/40 hover:bg-white hover:border-white hover:scale-110 transition-all duration-300 cursor-pointer shadow-xl backdrop-blur-md md:backdrop-blur-xl"
+                >
+                    <X className="w-5 h-5 text-white group-hover:text-black transition-colors" />
+                </button>
+            </div>
 
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 tracking-tight text-center leading-tight">Track Your Shipment</h2>
             <p className="text-white/60 mb-8 md:mb-10 text-base md:text-lg text-center">Enter your tracking number below to get real-time updates.</p>

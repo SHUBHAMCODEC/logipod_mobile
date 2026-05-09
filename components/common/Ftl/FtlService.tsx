@@ -122,7 +122,7 @@ export default function FtlService() {
                 className="text-sm lg:text-base text-slate-600 font-medium flex flex-col gap-2 mt-4"
               >
                 <span className="whitespace-nowrap text-base">We deliver what road logistics demands:</span>
-                <div className="relative h-[2.5em] w-full overflow-hidden inline-flex items-center">
+                <div className="relative h-[4.5em] md:h-[2.5em] w-full overflow-hidden inline-flex items-start md:items-center">
                   <AnimatePresence mode="wait">
                     <motion.div
                       key={keywordIndex}

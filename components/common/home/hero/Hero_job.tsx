@@ -33,14 +33,16 @@ const Hero_job: React.FC<HeroJobProps> = ({ onClose }) => {
             exit={{ opacity: 0, scale: 1.05 }}
             className="flex flex-col items-center relative w-full max-w-4xl p-6 md:p-5"
         >
-            <motion.button
-                initial={{ scale: 0.8, opacity: 0 }}
-                animate={{ scale: 1, opacity: 1 }}
-                onClick={onClose}
-                className="absolute top-14 sm:top-4 right-4 group w-10 h-10 md:w-11 md:h-11 rounded-full border-2 border-white/40 bg-black/40 hover:bg-white hover:border-white hover:scale-110 transition-all duration-300 cursor-pointer flex items-center justify-center backdrop-blur-md md:backdrop-blur-xl z-50"
-            >
-                <X className="w-5 h-5 text-white group-hover:text-black transition-colors" />
-            </motion.button>
+            <div className="w-full flex justify-end mb-4 sm:mb-0 sm:absolute sm:top-4 sm:right-4 z-50 pr-2 sm:pr-0">
+                <motion.button
+                    initial={{ scale: 0.8, opacity: 0 }}
+                    animate={{ scale: 1, opacity: 1 }}
+                    onClick={onClose}
+                    className="group w-10 h-10 md:w-11 md:h-11 rounded-full border-2 border-white/40 bg-black/40 hover:bg-white hover:border-white hover:scale-110 transition-all duration-300 cursor-pointer flex items-center justify-center backdrop-blur-md md:backdrop-blur-xl"
+                >
+                    <X className="w-5 h-5 text-white group-hover:text-black transition-colors" />
+                </motion.button>
+            </div>
 
             <div className="text-center max-w-2xl flex flex-col items-center px-4">
                 <div className="w-16 h-16 md:w-20 md:h-20 bg-[#F26341]/10 rounded-2xl md:rounded-3xl flex items-center justify-center mb-6 md:mb-8">

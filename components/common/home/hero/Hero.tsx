@@ -202,7 +202,7 @@ const Hero = () => {
                             transition={{ duration: 0.7, ease: [0.25, 1, 0.5, 1] as const }}
                             className="absolute inset-0 flex items-center justify-center px-2 sm:px-4"
                         >
-                            <div className="w-full h-full overflow-y-auto lg:overflow-visible flex flex-col items-center justify-start lg:justify-center pt-32 pb-48 lg:pt-0 lg:pb-0 custom-scrollbar">
+                            <div className="w-full h-full overflow-y-auto lg:overflow-visible flex flex-col items-center justify-start lg:justify-center pt-28 pb-48 lg:pt-0 lg:pb-0 custom-scrollbar">
                                 {/* Prioritize rendering based on the active or hovered section state to maintain exclusivity */}
                                 {(() => {
                                     const displaySection = activeSection !== "none" ? activeSection : hoveredSection;
@@ -228,7 +228,7 @@ const Hero = () => {
             </div>
 
             {/* Bottom Dock - Uplifted visually using translate-y to preserve center content position */}
-            <div className="relative z-30 w-full h-[110px] sm:h-[140px] md:h-[180px] pb-2 md:pb-4 px-4 md:px-8 shrink-0 -translate-y-16 md:-translate-y-12">
+            <div className="relative z-30 w-full h-[110px] sm:h-[140px] md:h-[180px] pb-2 md:pb-4 px-4 md:px-8 shrink-0 -translate-y-24 md:-translate-y-12">
                 <div className="max-w-[1500px] mx-auto h-full flex flex-nowrap overflow-x-auto lg:overflow-visible custom-scrollbar justify-start md:justify-center items-center gap-8 sm:gap-12 md:gap-20 border-t border-white/10 pt-4 md:pt-6">
                     {bottomLinks.map((item) => {
                         const isActive = activeSection === item.id || hoveredSection === item.id;
