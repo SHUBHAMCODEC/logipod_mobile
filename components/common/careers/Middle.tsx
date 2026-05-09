@@ -4,25 +4,28 @@ import React, { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { Search, MapPin, Clock, Briefcase, ChevronRight, Filter } from "lucide-react";
 import Link from "next/link";
-import jobsData from "@/data/jobs.json";
 
-const Middle = () => {
-  const jobs = Array.isArray(jobsData) ? jobsData : [];
+
+const Middle = ({ jobs = [] }: { jobs?: any[] }) => {
+
   const [searchTerm, setSearchTerm] = useState("");
   const [activeCategory, setActiveCategory] = useState("All");
 
   const categories = ["All", "Sales", "Marketing", "Engineering", "Operations", "Design"];
 
   const filteredJobs = jobs.filter((job) => {
-    const matchesSearch = job.title.toLowerCase().includes(searchTerm.toLowerCase()) || 
-                          job.description.toLowerCase().includes(searchTerm.toLowerCase());
-    const matchesCategory = activeCategory === "All" || 
-                            (activeCategory === "Sales" && job.title.includes("Sales")) ||
-                            (activeCategory === "Marketing" && job.title.includes("Marketing")) ||
-                            (activeCategory === "Engineering" && job.title.includes("Developer")) ||
-                            (activeCategory === "Operations" && job.title.includes("Operations")) ||
-                            (activeCategory === "Design" && job.title.includes("Designer"));
+    const title = job.title || "";
+    const description = job.description || "";
+    const matchesSearch = title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      description.toLowerCase().includes(searchTerm.toLowerCase());
     
+    const matchesCategory = activeCategory === "All" ||
+      (activeCategory === "Sales" && title.toLowerCase().includes("sales")) ||
+      (activeCategory === "Marketing" && title.toLowerCase().includes("marketing")) ||
+      (activeCategory === "Engineering" && (title.toLowerCase().includes("developer") || title.toLowerCase().includes("engineer"))) ||
+      (activeCategory === "Operations" && title.toLowerCase().includes("operations")) ||
+      (activeCategory === "Design" && (title.toLowerCase().includes("designer") || title.toLowerCase().includes("ui") || title.toLowerCase().includes("ux")));
+
     return matchesSearch && matchesCategory;
   });
 
@@ -54,11 +57,10 @@ const Middle = () => {
               <button
                 key={category}
                 onClick={() => setActiveCategory(category)}
-                className={`px-5 py-2.5 rounded-xl text-sm font-medium whitespace-nowrap transition-all ${
-                  activeCategory === category
-                    ? "bg-[#272D6D] text-white shadow-lg shadow-[#272D6D]/20"
-                    : "bg-white text-gray-500 hover:bg-gray-100 border border-gray-100"
-                }`}
+                className={`px-5 py-2.5 rounded-xl text-sm font-medium whitespace-nowrap transition-all ${activeCategory === category
+                  ? "bg-[#272D6D] text-white shadow-lg shadow-[#272D6D]/20"
+                  : "bg-white text-gray-500 hover:bg-gray-100 border border-gray-100"
+                  }`}
               >
                 {category}
               </button>
@@ -68,9 +70,9 @@ const Middle = () => {
 
         {/* Jobs Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <AnimatePresence mode="popLayout">
+          <AnimatePresence mode="popLayout">
             {jobs.length === 0 ? (
-              <motion.div 
+              <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 className="col-span-full py-20 text-center"
@@ -84,7 +86,7 @@ const Middle = () => {
             ) : filteredJobs.length > 0 ? (
               filteredJobs.map((job) => (
                 <motion.div
-                  key={job.id}
+                  key={job._id}
                   layout
                   initial={{ opacity: 0, scale: 0.9 }}
                   animate={{ opacity: 1, scale: 1 }}
@@ -124,8 +126,8 @@ const Middle = () => {
                     {job.description}
                   </p>
 
-                  <Link 
-                    href={`/careers/${job.slug}`}
+                  <Link
+                    href={`/careers/${job.slug?.current || ""}`}
                     className="w-full py-3 rounded-xl border border-gray-100 group-hover:border-[#F26341] group-hover:bg-[#F26341] group-hover:text-white text-[#272D6D] font-semibold flex items-center justify-center gap-2 transition-all duration-300"
                   >
                     Apply Now <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -133,7 +135,7 @@ const Middle = () => {
                 </motion.div>
               ))
             ) : (
-              <motion.div 
+              <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 className="col-span-full py-20 text-center"

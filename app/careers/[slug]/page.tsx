@@ -1,9 +1,11 @@
 import { notFound } from "next/navigation";
-import jobsData from "@/data/jobs.json";
 import Navbar from "@/components/common/Navbar";
 import Footer from "@/components/common/Footer";
 import JobDetails from "@/components/common/careers/JobDetails";
 import JobApplicationForm from "@/components/common/careers/JobApplicationForm";
+import { ChevronRight } from "lucide-react";
+
+import { client } from "@/lib/sanity/client";
 
 interface PageProps {
   params: {
@@ -12,14 +14,39 @@ interface PageProps {
 }
 
 export async function generateStaticParams() {
-  return jobsData.map((job) => ({
+  const jobs = await client.fetch(`
+    *[_type == "job"]{
+      "slug": slug.current
+    }
+  `);
+
+  return jobs.map((job: { slug: string }) => ({
     slug: job.slug,
   }));
 }
 
-export default async function JobPage({ params }: PageProps) {
+export default async function JobPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
-  const job = jobsData.find((j) => j.slug === slug);
+  
+  const job = await client.fetch(
+    `
+    *[_type == "job" && slug.current == $slug][0]{
+      title,
+      slug,
+      location,
+      type,
+      experience,
+      description,
+      about,
+      responsibilities,
+      requirements,
+      benefits
+    }
+    `,
+    {
+      slug: slug,
+    }
+  );
 
   if (!job) {
     notFound();
@@ -28,44 +55,34 @@ export default async function JobPage({ params }: PageProps) {
   return (
     <div className="flex flex-col min-h-screen bg-white">
       <Navbar />
-      
-      <main className="flex-grow pt-32 pb-24 relative">
-        <div className="container mx-auto px-6">
-          <div className="flex flex-col lg:flex-row gap-16">
-            {/* Left Content - Job Details */}
-            <div className="flex-1">
+
+      <main className="flex-grow pt-40 pb-24 relative overflow-hidden bg-gray-50/50">
+        {/* Background Decorative Elements */}
+        <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-gradient-to-bl from-[#F26341]/5 to-transparent blur-[120px] -mr-96 -mt-96" />
+        <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-gradient-to-tr from-[#272D6D]/5 to-transparent blur-[100px] -ml-48 -mb-48" />
+
+        <div className="max-w-[1400px] mx-auto px-6 relative z-10">
+          <div className="flex flex-col lg:flex-row gap-12 xl:gap-20 items-start">
+            
+            {/* Main Content Area */}
+            <div className="w-full lg:flex-1 min-w-0">
               <JobDetails job={job} />
             </div>
 
-            {/* Right Side - Application Form & Sticky CTA */}
-            <div className="lg:w-[450px]">
-              <div className="sticky top-32 space-y-8">
-                {/* Sticky Apply Banner (Desktop) */}
-                <div className="hidden lg:block bg-gray-50 p-8 rounded-3xl border border-gray-100 shadow-sm mb-8">
-                  <h3 className="text-xl font-bold text-[#272D6D] mb-2">Interested in this role?</h3>
-                  <p className="text-gray-500 mb-6 text-sm">Join a team that values innovation and impact in the logistics sector.</p>
-                  <a 
-                    href="#apply-form"
-                    className="w-full py-3 bg-[#272D6D] text-white rounded-xl font-bold hover:bg-[#1A1F4D] transition-colors flex items-center justify-center"
-                  >
-                    Apply for this position
-                  </a>
-                </div>
-
-                {/* Application Form */}
-                <JobApplicationForm jobTitle={job.title} />
-              </div>
-            </div>
+            {/* Sidebar Area */}
+            <aside className="w-full lg:w-[420px] sticky top-36 space-y-8 pb-12 shrink-0">
+              <JobApplicationForm jobTitle={job.title} />
+            </aside>
           </div>
         </div>
 
-        {/* Floating Apply Button (Mobile Only) */}
+        {/* Mobile Apply Button */}
         <div className="lg:hidden fixed bottom-6 left-6 right-6 z-50">
-          <a 
+          <a
             href="#apply-form"
-            className="w-full py-4 bg-[#F26341] text-white rounded-2xl font-bold shadow-2xl shadow-[#F26341]/40 flex items-center justify-center text-lg"
+            className="w-full py-4 bg-[#F26341] text-white rounded-2xl font-extrabold shadow-2xl shadow-[#F26341]/40 flex items-center justify-center text-lg active:scale-95 transition-transform"
           >
-            Apply Now
+            Quick Apply
           </a>
         </div>
       </main>

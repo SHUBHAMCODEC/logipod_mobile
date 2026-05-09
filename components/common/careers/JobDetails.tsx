@@ -1,9 +1,9 @@
 "use client";
 
 import React from "react";
-import { MapPin, Clock, Briefcase, Calendar, ChevronLeft, Share2, Heart } from "lucide-react";
+import { MapPin, Clock, Briefcase, ChevronLeft, Share2, Heart, CheckCircle2, ShieldCheck, Sparkles, Zap } from "lucide-react";
 import Link from "next/link";
-import { motion } from "motion/react";
+import { Variants, motion } from "motion/react";
 
 interface JobDetailsProps {
   job: {
@@ -19,130 +19,150 @@ interface JobDetailsProps {
 }
 
 const JobDetails = ({ job }: JobDetailsProps) => {
+  const containerVariants: Variants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1
+      }
+    }
+  };
+
+  const itemVariants: Variants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { 
+        duration: 0.5, 
+        ease: "easeOut" 
+      }
+    }
+  };
+
   return (
-    <div className="space-y-12">
-      {/* Back Link */}
-      <Link 
-        href="/careers" 
-        className="inline-flex items-center gap-2 text-gray-500 hover:text-[#F26341] transition-colors font-medium group"
-      >
-        <ChevronLeft className="w-5 h-5 group-hover:-translate-x-1 transition-transform" />
-        Back to All Jobs
-      </Link>
-
-      {/* Header */}
-      <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
-        <div>
-          <h1 className="text-4xl md:text-5xl font-bold text-[#272D6D] mb-4">{job.title}</h1>
-          <div className="flex flex-wrap gap-6 text-gray-500 font-medium">
-            <div className="flex items-center gap-2">
-              <MapPin className="w-5 h-5 text-[#F26341]" />
-              {job.location}
-            </div>
-            <div className="flex items-center gap-2">
-              <Briefcase className="w-5 h-5 text-[#F26341]" />
-              {job.experience}
-            </div>
-            <div className="flex items-center gap-2">
-              <Clock className="w-5 h-5 text-[#F26341]" />
-              {job.type}
-            </div>
-          </div>
-        </div>
-        <div className="flex gap-3">
-          <button className="p-3 rounded-xl border border-gray-200 hover:bg-gray-50 transition-colors">
-            <Share2 className="w-5 h-5 text-gray-600" />
-          </button>
-          <button className="p-3 rounded-xl border border-gray-200 hover:bg-gray-50 transition-colors">
-            <Heart className="w-5 h-5 text-gray-600" />
-          </button>
-        </div>
-      </div>
-
-      {/* About the Role */}
-      <section className="bg-white p-8 md:p-10 rounded-3xl border border-gray-100 shadow-sm">
-        <h2 className="text-2xl font-bold text-[#272D6D] mb-4">About the role</h2>
-        <p className="text-gray-600 text-lg leading-relaxed">
-          {job.about}
-        </p>
-      </section>
-
-      {/* Grid for Responsibilities and Requirements */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-        <section className="bg-white p-8 md:p-10 rounded-3xl border border-gray-100 shadow-sm">
-          <h2 className="text-2xl font-bold text-[#272D6D] mb-6">Responsibilities</h2>
-          <ul className="space-y-4">
-            {job.responsibilities.map((item, index) => (
-              <li key={index} className="flex gap-3 text-gray-600">
-                <div className="mt-1.5 w-1.5 h-1.5 rounded-full bg-[#F26341] shrink-0" />
-                {item}
-              </li>
-            ))}
-          </ul>
-        </section>
-
-        <section className="bg-white p-8 md:p-10 rounded-3xl border border-gray-100 shadow-sm">
-          <h2 className="text-2xl font-bold text-[#272D6D] mb-6">Requirements</h2>
-          <ul className="space-y-4">
-            {job.requirements.map((item, index) => (
-              <li key={index} className="flex gap-3 text-gray-600">
-                <div className="mt-1.5 w-1.5 h-1.5 rounded-full bg-[#272D6D] shrink-0" />
-                {item}
-              </li>
-            ))}
-          </ul>
-        </section>
-      </div>
-
-      {/* Benefits */}
-      <section className="bg-[#272D6D] p-8 md:p-12 rounded-3xl text-white overflow-hidden relative">
+    <motion.div 
+      variants={containerVariants}
+      initial="hidden"
+      animate="visible"
+      className="space-y-10 w-full min-w-0"
+    >
+      {/* Refined Job Header */}
+      <motion.section variants={itemVariants} className="bg-white p-8 md:p-10 rounded-[2.5rem] border border-gray-100 shadow-xl shadow-gray-500/5 relative overflow-hidden">
+        <div className="absolute top-0 left-0 w-2 h-full bg-[#F26341]" />
+        
         <div className="relative z-10">
-          <h2 className="text-3xl font-bold mb-8">Perks & Benefits</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {job.benefits.map((benefit, index) => (
-              <div key={index} className="flex gap-4 items-start bg-white/10 p-6 rounded-2xl backdrop-blur-sm">
-                <div className="p-2 rounded-lg bg-[#F26341]">
-                  <CheckCircle2 className="w-5 h-5 text-white" />
-                </div>
-                <p className="font-medium">{benefit}</p>
+          <Link 
+            href="/careers" 
+            className="inline-flex items-center gap-2 text-[#272D6D] hover:text-[#F26341] transition-all font-bold text-xs uppercase tracking-[0.2em] mb-6 group/back"
+          >
+            <ChevronLeft className="w-4 h-4 group-hover/back:-translate-x-1 transition-transform" />
+            Browse All Roles
+          </Link>
+          
+          <div className="flex items-center gap-3 mb-4">
+            <div className="w-10 h-1 bg-[#F26341] rounded-full" />
+            <span className="text-[#F26341] font-black text-sm uppercase tracking-[0.4em]">Current Opening</span>
+          </div>
+          
+          <div className="mb-8">
+            <span className="text-[#272D6D]/40 font-black text-xs uppercase tracking-widest block mb-2">Job Role</span>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-[#272D6D] leading-[1.1] break-words tracking-tighter">
+              {job.title || "Position at Logipod"}
+            </h1>
+          </div>
+
+          <div className="flex flex-wrap gap-3 md:gap-4 w-full">
+            {[
+              { icon: MapPin, text: job.location },
+              { icon: Briefcase, text: `${job.experience} Yrs Exp` },
+              { icon: Clock, text: job.type }
+            ].map((item, i) => (
+              <div key={i} className="inline-flex items-center gap-2.5 px-5 py-3 rounded-2xl bg-gray-50 border border-gray-100 text-gray-700 font-black text-xs md:text-sm whitespace-nowrap">
+                <item.icon className="w-4 h-4 text-[#F26341] shrink-0" />
+                {item.text}
               </div>
             ))}
           </div>
         </div>
-        {/* Decorative elements */}
-        <div className="absolute top-0 right-0 w-64 h-64 bg-[#F26341] blur-[100px] opacity-20 -mr-32 -mt-32" />
-        <div className="absolute bottom-0 left-0 w-64 h-64 bg-[#F26341] blur-[100px] opacity-10 -ml-32 -mb-32" />
-      </section>
+      </motion.section>
 
-      {/* Company Culture */}
-      <section className="bg-gray-50 p-8 md:p-12 rounded-3xl border border-gray-100">
-        <div className="max-w-3xl">
-          <h2 className="text-2xl font-bold text-[#272D6D] mb-4">Company Culture</h2>
-          <p className="text-gray-600 leading-relaxed">
-            At Logipod, we are building more than just a logistics platform; we are building a community of innovators. Our culture is rooted in transparency, high performance, and collective growth. We believe in giving our team members the autonomy to make a real impact on how India moves goods.
-          </p>
+      {/* About the Role */}
+      <motion.section variants={itemVariants} className="bg-white p-8 md:p-12 rounded-[2.5rem] border border-gray-100 shadow-xl shadow-gray-500/5 overflow-hidden">
+        <div className="flex items-center gap-4 mb-8">
+          <div className="w-12 h-12 rounded-2xl bg-[#272D6D] flex items-center justify-center text-white shadow-lg shadow-[#272D6D]/20 shrink-0">
+            <Sparkles className="w-6 h-6" />
+          </div>
+          <h2 className="text-2xl font-extrabold text-[#272D6D]">About the Position</h2>
         </div>
-      </section>
-    </div>
+        <p className="text-gray-600 text-lg leading-relaxed font-medium break-words">
+          {job.about || "Explore this exciting opportunity at Logipod and help us redefine the future of logistics infrastructure."}
+        </p>
+      </motion.section>
+
+      {/* Grid for Specifics */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        {/* Responsibilities */}
+        <motion.section variants={itemVariants} className="bg-white p-8 md:p-10 rounded-[2.5rem] border border-gray-100 shadow-xl shadow-gray-500/5 overflow-hidden">
+          <div className="flex items-center gap-4 mb-8">
+            <div className="w-12 h-12 rounded-2xl bg-[#F26341] flex items-center justify-center text-white shadow-lg shadow-[#F26341]/20 shrink-0">
+              <Zap className="w-6 h-6" />
+            </div>
+            <h2 className="text-2xl font-extrabold text-[#272D6D]">Responsibilities</h2>
+          </div>
+          <ul className="space-y-4">
+            {job.responsibilities?.map((item, index) => (
+              <li key={index} className="flex gap-4 p-5 rounded-2xl bg-gray-50/50 hover:bg-gray-50 transition-all border border-transparent hover:border-gray-200 group">
+                <div className="mt-1 w-2 h-2 rounded-full bg-[#F26341] shrink-0" />
+                <span className="text-gray-600 font-bold text-sm leading-relaxed break-words">{item}</span>
+              </li>
+            ))}
+          </ul>
+        </motion.section>
+
+        {/* Requirements */}
+        <motion.section variants={itemVariants} className="bg-white p-8 md:p-10 rounded-[2.5rem] border border-gray-100 shadow-xl shadow-gray-500/5 overflow-hidden">
+          <div className="flex items-center gap-4 mb-8">
+            <div className="w-12 h-12 rounded-2xl bg-[#272D6D] flex items-center justify-center text-white shadow-lg shadow-[#272D6D]/20 shrink-0">
+              <ShieldCheck className="w-6 h-6" />
+            </div>
+            <h2 className="text-2xl font-extrabold text-[#272D6D]">Requirements</h2>
+          </div>
+          <ul className="space-y-4">
+            {job.requirements?.map((item, index) => (
+              <li key={index} className="flex gap-4 p-5 rounded-2xl bg-gray-50/50 hover:bg-gray-50 transition-all border border-transparent hover:border-gray-200 group">
+                <CheckCircle2 className="w-5 h-5 text-[#272D6D] shrink-0" />
+                <span className="text-gray-600 font-bold text-sm leading-relaxed break-words">{item}</span>
+              </li>
+            ))}
+          </ul>
+        </motion.section>
+      </div>
+
+      {/* Perks & Benefits */}
+      <motion.section variants={itemVariants} className="bg-[#272D6D] p-10 md:p-14 rounded-[2.5rem] text-white relative overflow-hidden">
+        <div className="relative z-10">
+          <h2 className="text-3xl font-black mb-10 flex items-center gap-4">
+            <Heart className="w-8 h-8 text-[#F26341]" />
+            Perks & Benefits
+          </h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {job.benefits?.map((benefit, index) => (
+              <div key={index} className="flex items-center gap-4 bg-white/5 p-6 rounded-3xl border border-white/10 backdrop-blur-sm group hover:bg-white/10 transition-all">
+                <div className="w-10 h-10 rounded-xl bg-[#F26341] flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform shrink-0">
+                  <CheckCircle2 className="w-5 h-5 text-white" />
+                </div>
+                <span className="font-extrabold text-sm tracking-wide break-words">{benefit}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+        <div className="absolute top-0 right-0 w-96 h-96 bg-[#F26341]/20 blur-[100px] -mr-48 -mt-48" />
+        <div className="absolute bottom-0 left-0 w-64 h-64 bg-blue-500/10 blur-[80px] -ml-32 -mb-32" />
+      </motion.section>
+    </motion.div>
   );
 };
-
-const CheckCircle2 = ({ className }: { className?: string }) => (
-  <svg 
-    xmlns="http://www.w3.org/2000/svg" 
-    width="24" 
-    height="24" 
-    viewBox="0 0 24 24" 
-    fill="none" 
-    stroke="currentColor" 
-    strokeWidth="2" 
-    strokeLinecap="round" 
-    strokeLinejoin="round" 
-    className={className}
-  >
-    <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/>
-    <path d="m9 12 2 2 4-4"/>
-  </svg>
-);
 
 export default JobDetails;

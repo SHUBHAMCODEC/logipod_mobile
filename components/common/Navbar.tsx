@@ -37,7 +37,7 @@ export default function Navbar() {
       href: "/#",
       items: [
         { name: "Full Truck Load", href: "/ftl" },
-        { name: "EXIM", href: "/Exim" },
+        { name: "Freight Forwarding", href: "/Exim" },
       ],
     },
     {
@@ -74,8 +74,8 @@ export default function Navbar() {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] ${isScrolled
-          ? "bg-white/95 backdrop-blur-md md:backdrop-blur-xl shadow-[0_4px_30px_rgba(0,0,0,0.05)] py-3 border-b border-gray-100"
-          : "bg-white py-5"
+        ? "bg-white/95 backdrop-blur-md md:backdrop-blur-xl shadow-[0_4px_30px_rgba(0,0,0,0.05)] py-3 border-b border-gray-100"
+        : "bg-white py-5"
         }`}
     >
       <div className="max-w-[1440px] mx-auto px-6 lg:px-12 flex items-center justify-between">
@@ -151,8 +151,8 @@ export default function Navbar() {
           <form
             onSubmit={handleSearch}
             className={`relative flex items-center h-[46px] w-[220px] transition-all duration-300 rounded-full overflow-hidden ${isSearchFocused || searchQuery
-                ? "bg-white shadow-[0_0_0_2px_rgba(242,99,65,0.2)] border-transparent"
-                : "bg-gray-50/80 border border-gray-200 hover:bg-gray-100 hover:border-gray-300"
+              ? "bg-white shadow-[0_0_0_2px_rgba(242,99,65,0.2)] border-transparent"
+              : "bg-gray-50/80 border border-gray-200 hover:bg-gray-100 hover:border-gray-300"
               }`}
           >
             <button
