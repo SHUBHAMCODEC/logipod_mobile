@@ -32,33 +32,14 @@ const Hero_getToKnow: React.FC<HeroGetToKnowProps> = ({ onClose }) => {
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 1.05 }}
-            className="flex flex-col items-center relative w-full max-w-4xl pt-16 md:p-16"
+            className="flex flex-col items-center relative w-full max-w-4xl p-6 md:p-16"
         >
-            {/* =========================================
-                MOBILE CLOSE BUTTON
-                Edit this block to change Mobile (X) position
-            ========================================= */}
-            <div className="md:hidden absolute top-2 right-3 z-[70]">
+            <div className="w-full flex justify-end mb-4 sm:mb-0 sm:absolute sm:top-4 sm:right-4 z-50 pr-2 sm:pr-0">
                 <motion.button
                     initial={{ scale: 0.8, opacity: 0 }}
                     animate={{ scale: 1, opacity: 1 }}
                     onClick={onClose}
-                    className="w-10 h-10 rounded-full border-2 border-white/40 bg-black/40 hover:bg-white hover:border-white transition-all cursor-pointer flex items-center justify-center backdrop-blur-md"
-                >
-                    <X className="w-5 h-5 text-white transition-colors" />
-                </motion.button>
-            </div>
-
-            {/* =========================================
-                PC / DESKTOP CLOSE BUTTON
-                Edit this block to change PC (X) position
-            ========================================= */}
-            <div className="hidden md:block absolute top-4 right-4 z-[70]">
-                <motion.button
-                    initial={{ scale: 0.8, opacity: 0 }}
-                    animate={{ scale: 1, opacity: 1 }}
-                    onClick={onClose}
-                    className="group w-12 h-12 rounded-full border-2 border-white/40 bg-black/40 hover:bg-white hover:border-white hover:scale-110 transition-all duration-300 cursor-pointer flex items-center justify-center backdrop-blur-xl"
+                    className="group w-10 h-10 md:w-11 md:h-11 rounded-full border-2 border-white/40 bg-black/40 hover:bg-white hover:border-white hover:scale-110 transition-all duration-300 cursor-pointer flex items-center justify-center backdrop-blur-md md:backdrop-blur-xl"
                 >
                     <X className="w-5 h-5 text-white group-hover:text-black transition-colors" />
                 </motion.button>

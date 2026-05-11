@@ -101,13 +101,13 @@ const Hero_services: React.FC<HeroServicesProps> = ({ onClose }) => {
       initial={{ opacity: 0, scale: 0.95 }}
       animate={{ opacity: 1, scale: 1 }}
       exit={{ opacity: 0, scale: 1.05 }}
-      className="flex flex-col items-center relative w-full max-w-4xl px-2 sm:px-4 min-h-[400px] pt-16 md:pt-20"
+      className="flex flex-col items-center relative w-full max-w-4xl px-2 sm:px-4 min-h-[400px] pt-12 sm:pt-16"
     >
       {/* =========================================
           MOBILE CLOSE BUTTON
           Edit this block to change Mobile (X) position
       ========================================= */}
-      <div className="md:hidden absolute top-2 right-3 z-[70]">
+      <div className="md:hidden absolute top-0 right-3 z-[70]">
         <motion.button
           initial={{ scale: 0.8, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
