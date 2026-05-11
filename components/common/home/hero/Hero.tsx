@@ -206,13 +206,13 @@ const Hero = () => {
                                 GLOBAL MOBILE CLOSE BUTTON (Phone Specific)
                                 Positioned above the scroll area
                             ========================================= */}
-                            <div className="md:hidden w-full h-[65px] flex items-end justify-end px-4 shrink-0 z-[260]">
+                            <div className="md:hidden w-full h-[110px] flex items-end justify-end px-4 shrink-0 z-[260]">
                                 <motion.button
                                     initial={{ scale: 0.8, opacity: 0 }}
                                     animate={{ scale: 1, opacity: 1 }}
                                     whileTap={{ scale: 0.9 }}
                                     onClick={() => { setActiveSection("none"); setHoveredSection("none"); }}
-                                    className="w-10 h-10 rounded-full border border-white/30 bg-black/50 text-white flex items-center justify-center backdrop-blur-md"
+                                    className="w-10 h-10 rounded-full border border-white/30 bg-black/50 text-white flex items-center justify-center backdrop-blur-md mb-2"
                                 >
                                     <X className="w-5 h-5 stroke-[2.5]" />
                                 </motion.button>
@@ -300,8 +300,8 @@ const Hero = () => {
                 MOBILE BOTTOM DOCK
                 Optimized for Small Android (360), iPhone (390), Pro Max (430)
             ========================================= */}
-            <div className="block md:hidden relative z-30 w-full h-[100px] max-[430px]:h-[85px] pb-6 px-4 shrink-0 mb-[60px] max-[360px]:mb-[40px] max-[430px]:mb-[50px] sm:mb-[100px]">
-                <div className="max-w-[1400px] mx-auto h-full flex flex-nowrap overflow-x-auto custom-scrollbar justify-start items-center gap-10 sm:gap-14 border-t border-white/10 pt-4 px-2">
+            <div className="block md:hidden relative z-30 w-full h-[90px] max-[430px]:h-[80px] pb-6 px-2 shrink-0 mb-[60px] max-[360px]:mb-[40px] max-[430px]:mb-[50px] sm:mb-[100px]">
+                <div className="max-w-[1400px] mx-auto h-full flex flex-nowrap overflow-x-hidden justify-between items-center gap-0 border-t border-white/10 pt-4 px-1">
                     {bottomLinks.map((item) => {
                         const isActive = activeSection === item.id || hoveredSection === item.id;
 
@@ -316,8 +316,8 @@ const Hero = () => {
                             >
                                 <motion.div
                                     animate={{
-                                        scale: isActive ? 1.2 : 0.9,
-                                        y: isActive ? -6 : 0
+                                        scale: isActive ? 1.1 : 0.8,
+                                        y: isActive ? -4 : 0
                                     }}
                                     transition={{ type: "spring", stiffness: 400, damping: 25 }}
                                     className={`relative z-10 transition-all scale-80 ${isActive ? 'text-[#F26341]' : 'text-white/60'}`}
@@ -331,7 +331,7 @@ const Hero = () => {
                                     )}
                                 </motion.div>
 
-                                <span className={`uppercase text-[10px] font-bold tracking-[0.15em] transition-all duration-300 ${isActive ? 'text-white translate-y-1' : 'text-white/50'}`}>
+                                <span className={`uppercase text-[9px] font-bold tracking-[0.1em] transition-all duration-300 ${isActive ? 'text-white translate-y-1' : 'text-white/50'}`}>
                                     {item.label}
                                 </span>
 
