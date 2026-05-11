@@ -233,7 +233,7 @@ const Hero = () => {
                 DESKTOP / PC BOTTOM DOCK
                 Edit this block to change PC layout only
             ========================================= */}
-            <div className="hidden md:block relative z-30 w-full h-[150px] pb-8 px-12 shrink-0 mb-[80px]">
+            <div className="hidden md:block relative z-30 w-full h-[150px] pb-8 px-12 shrink-0 mb-[40px]">
                 <div className="max-w-[1400px] mx-auto h-full flex flex-nowrap overflow-visible justify-center items-center gap-24 border-t border-white/10 pt-8 px-0">
                     {bottomLinks.map((item) => {
                         const isActive = activeSection === item.id || hoveredSection === item.id;
