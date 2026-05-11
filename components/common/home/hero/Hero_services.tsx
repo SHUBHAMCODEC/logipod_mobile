@@ -103,13 +103,31 @@ const Hero_services: React.FC<HeroServicesProps> = ({ onClose }) => {
       exit={{ opacity: 0, scale: 1.05 }}
       className="flex flex-col items-center relative w-full max-w-4xl px-2 sm:px-4 min-h-[400px] pt-12 sm:pt-16"
     >
-      {/* Standardized Close Button */}
-      <div className="absolute top-0 right-2 sm:right-4 z-[70]">
+      {/* =========================================
+          MOBILE CLOSE BUTTON
+          Edit this block to change Mobile (X) position
+      ========================================= */}
+      <div className="md:hidden absolute top-0 right-2 z-[70]">
         <motion.button
           initial={{ scale: 0.8, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           onClick={onClose}
-          className="group w-10 h-10 md:w-11 md:h-11 rounded-full border-2 border-white/40 bg-black/40 hover:bg-white hover:border-white hover:scale-110 transition-all duration-300 cursor-pointer flex items-center justify-center backdrop-blur-md md:backdrop-blur-xl"
+          className="w-10 h-10 rounded-full border-2 border-white/40 bg-black/40 hover:bg-white hover:border-white transition-all cursor-pointer flex items-center justify-center backdrop-blur-md"
+        >
+          <X className="w-5 h-5 text-white transition-colors" />
+        </motion.button>
+      </div>
+
+      {/* =========================================
+          PC / DESKTOP CLOSE BUTTON
+          Edit this block to change PC (X) position
+      ========================================= */}
+      <div className="hidden md:block absolute top-4 right-4 z-[70]">
+        <motion.button
+          initial={{ scale: 0.8, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          onClick={onClose}
+          className="group w-12 h-12 rounded-full border-2 border-white/40 bg-black/40 hover:bg-white hover:border-white hover:scale-110 transition-all duration-300 cursor-pointer flex items-center justify-center backdrop-blur-xl"
         >
           <X className="w-5 h-5 text-white group-hover:text-black transition-colors" />
         </motion.button>
