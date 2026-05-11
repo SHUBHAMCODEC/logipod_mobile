@@ -300,8 +300,8 @@ const Hero = () => {
                 MOBILE BOTTOM DOCK
                 Optimized for Small Android (360), iPhone (390), Pro Max (430)
             ========================================= */}
-            <div className="block md:hidden relative z-30 w-full h-[90px] max-[430px]:h-[80px] pb-6 px-2 shrink-0 mb-[60px] max-[360px]:mb-[40px] max-[430px]:mb-[50px] sm:mb-[100px]">
-                <div className="max-w-[1400px] mx-auto h-full flex flex-nowrap overflow-x-hidden justify-between items-center gap-0 border-t border-white/10 pt-4 px-1">
+            <div className="block md:hidden relative z-30 w-screen h-[110px] max-[430px]:h-[105px] pb-0 shrink-0 mb-[60px] max-[360px]:mb-[40px] max-[430px]:mb-[50px] sm:mb-[100px] left-1/2 -translate-x-1/2">
+                <div className="h-full w-full flex flex-nowrap overflow-x-auto overflow-y-hidden justify-start items-center gap-12 border-t border-white/10 pt-1 pb-8 px-6 snap-x snap-mandatory touch-pan-x">
                     {bottomLinks.map((item) => {
                         const isActive = activeSection === item.id || hoveredSection === item.id;
 
@@ -312,12 +312,12 @@ const Hero = () => {
                                     setHoveredSection(item.id as Section);
                                     setActiveSection(item.id as Section);
                                 }}
-                                className="relative flex flex-col items-center gap-3 cursor-pointer shrink-0 py-2"
+                                className="relative flex flex-col items-center gap-1.5 cursor-pointer shrink-0 py-2 snap-center min-w-[110px] max-[360px]:min-w-[100px]"
                             >
                                 <motion.div
                                     animate={{
-                                        scale: isActive ? 1.1 : 0.8,
-                                        y: isActive ? -4 : 0
+                                        scale: isActive ? 1.2 : 0.9,
+                                        y: isActive ? -6 : 0
                                     }}
                                     transition={{ type: "spring", stiffness: 400, damping: 25 }}
                                     className={`relative z-10 transition-all scale-80 ${isActive ? 'text-[#F26341]' : 'text-white/60'}`}
@@ -331,7 +331,7 @@ const Hero = () => {
                                     )}
                                 </motion.div>
 
-                                <span className={`uppercase text-[9px] font-bold tracking-[0.1em] transition-all duration-300 ${isActive ? 'text-white translate-y-1' : 'text-white/50'}`}>
+                                <span className={`uppercase text-[10px] font-bold tracking-[0.15em] transition-all duration-300 ${isActive ? 'text-white translate-y-1' : 'text-white/50'}`}>
                                     {item.label}
                                 </span>
 
