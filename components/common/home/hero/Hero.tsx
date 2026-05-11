@@ -150,7 +150,7 @@ const Hero = () => {
                             transition={{ duration: 0.6 }}
                             className="flex flex-col items-center justify-center text-center px-4 md:px-8 mt-[-20px] sm:mt-0"
                         >
-                            <motion.h1 className="text-3xl sm:text-5xl md:text-7xl font-extrabold text-white mb-4 sm:mb-8 leading-[1.1] tracking-tight">
+                            <motion.h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-white mb-4 sm:mb-6 leading-[1.1] tracking-tight md:tracking-tighter">
                                 {"Move Anything. Anywhere. With Total Control.".split(" ").map((word, i) => (
                                     <motion.span
                                         key={i}
@@ -173,7 +173,7 @@ const Hero = () => {
                                 initial={{ opacity: 0, filter: "blur(12px)", y: 20 }}
                                 animate={{ opacity: 1, filter: "blur(0px)", y: 0 }}
                                 transition={{ duration: 1.5, delay: 1.2, ease: "easeOut" }}
-                                className="text-[13px] sm:text-lg md:text-xl text-white/90 max-w-3xl mb-6 sm:mb-12 leading-relaxed font-light tracking-wide text-balance px-4"
+                                className="text-sm sm:text-base md:text-lg lg:text-xl text-white/80 max-w-3xl mb-8 sm:mb-10 leading-relaxed font-light tracking-wide text-balance px-4 md:px-0"
                             >
                                 Logipod is a unified logistics platform powering FTL, Cross-border, and fulfillment —
                                 with real-time visibility, intelligent routing, and scalable infrastructure.
@@ -200,9 +200,10 @@ const Hero = () => {
                             animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
                             exit={{ opacity: 0, y: -20, filter: "blur(10px)", transition: { duration: 0.3 } }}
                             transition={{ duration: 0.7, ease: [0.25, 1, 0.5, 1] as const }}
-                            className="absolute inset-0 flex items-center justify-center px-2 sm:px-4"
+                            className="absolute inset-0 flex flex-col items-center px-2 sm:px-4"
                         >
-                            <div className="w-full h-full overflow-y-auto lg:overflow-visible flex flex-col items-center justify-start lg:justify-center pt-28 pb-48 lg:pt-0 lg:pb-0 custom-scrollbar">
+                            <div className="w-full h-full overflow-y-auto custom-scrollbar flex flex-col items-center py-6">
+                                <div className="w-full my-auto flex flex-col items-center justify-center">
                                 {/* Prioritize rendering based on the active or hovered section state to maintain exclusivity */}
                                 {(() => {
                                     const displaySection = activeSection !== "none" ? activeSection : hoveredSection;
@@ -221,15 +222,16 @@ const Hero = () => {
                                             return null;
                                     }
                                 })()}
+                                </div>
                             </div>
                         </motion.div>
                     )}
                 </AnimatePresence>
             </div>
 
-            {/* Bottom Dock - Uplifted visually using translate-y to preserve center content position */}
-            <div className="relative z-30 w-full h-[110px] sm:h-[140px] md:h-[180px] pb-2 md:pb-4 px-4 md:px-8 shrink-0 -translate-y-24 md:-translate-y-12">
-                <div className="max-w-[1500px] mx-auto h-full flex flex-nowrap overflow-x-auto lg:overflow-visible custom-scrollbar justify-start md:justify-center items-center gap-8 sm:gap-12 md:gap-20 border-t border-white/10 pt-4 md:pt-6">
+            {/* Bottom Dock - Structurally perfect: Uses margin instead of translation to prevent any overlapping or collision */}
+            <div className="relative z-30 w-full h-[110px] sm:h-[130px] md:h-[150px] pb-6 md:pb-8 px-4 md:px-12 shrink-0 mb-20 sm:mb-16 md:mb-12">
+                <div className="max-w-[1400px] mx-auto h-full flex flex-nowrap overflow-x-auto lg:overflow-visible custom-scrollbar justify-start md:justify-center items-center gap-10 sm:gap-14 md:gap-24 border-t border-white/10 pt-5 md:pt-8 px-2 md:px-0">
                     {bottomLinks.map((item) => {
                         const isActive = activeSection === item.id || hoveredSection === item.id;
 
@@ -239,34 +241,34 @@ const Hero = () => {
                                 onMouseEnter={() => handleMouseEnter(item.id as Section)}
                                 onMouseLeave={handleMouseLeave}
                                 onClick={() => setActiveSection(item.id as Section)}
-                                whileHover={{ y: -8 }}
-                                className="relative group flex flex-col items-center gap-2 md:gap-4 cursor-pointer shrink-0"
+                                whileHover={{ y: -6 }}
+                                className="relative group flex flex-col items-center gap-3 md:gap-5 cursor-pointer shrink-0 py-2"
                             >
                                 <motion.div
                                     animate={{
-                                        scale: isActive ? 1.15 : 0.85,
-                                        y: isActive ? -4 : 0
+                                        scale: isActive ? 1.2 : 0.9,
+                                        y: isActive ? -6 : 0
                                     }}
-                                    transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                                    className={`relative z-10 transition-all scale-75 md:scale-100 ${isActive ? 'text-[#F26341]' : 'text-white/70 group-hover:text-white'}`}
+                                    transition={{ type: "spring", stiffness: 400, damping: 25 }}
+                                    className={`relative z-10 transition-all scale-80 md:scale-100 ${isActive ? 'text-[#F26341]' : 'text-white/60 group-hover:text-white/90'}`}
                                 >
                                     {item.renderIcon(isActive)}
                                     {isActive && (
                                         <motion.div
                                             layoutId="icon-glow"
-                                            className="absolute inset-0 bg-[#F26341]/20 blur-2xl rounded-full -z-10"
+                                            className="absolute inset-0 bg-[#F26341]/30 blur-2xl rounded-full -z-10"
                                         />
                                     )}
                                 </motion.div>
 
-                                <span className={`uppercase text-[9px] md:text-[13px] font-extrabold tracking-[0.1em] md:tracking-[0.15em] transition-all duration-300 ${isActive ? 'text-white translate-y-1' : 'text-white/40 group-hover:text-white'}`}>
+                                <span className={`uppercase text-[10px] md:text-[12px] font-bold tracking-[0.15em] transition-all duration-300 ${isActive ? 'text-white translate-y-1' : 'text-white/50 group-hover:text-white'}`}>
                                     {item.label}
                                 </span>
 
                                 {isActive && (
                                     <motion.div
                                         layoutId="active-indicator"
-                                        className="absolute -bottom-2 md:-bottom-4 w-8 md:w-12 h-0.5 md:h-1 bg-[#F26341] rounded-full shadow-[0_0_15px_rgba(242,99,65,0.8)]"
+                                        className="absolute -bottom-3 md:-bottom-5 w-10 md:w-16 h-[3px] bg-[#F26341] rounded-full shadow-[0_0_20px_rgba(242,99,65,0.9)]"
                                     />
                                 )}
                             </motion.div>
