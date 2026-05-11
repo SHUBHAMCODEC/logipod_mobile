@@ -231,7 +231,7 @@ const Hero = () => {
                 DESKTOP / PC BOTTOM DOCK
                 Edit this block to change PC layout only
             ========================================= */}
-            <div className="hidden md:block relative z-30 w-full h-[100px] px-12 shrink-0 mb-[80px]">
+            <div className="hidden md:block absolute bottom-[80px] left-0 right-0 z-30 w-full h-[100px] px-12">
                 <div className="max-w-[1400px] mx-auto h-full flex flex-nowrap overflow-visible justify-center items-center gap-24 border-t border-white/10 pt-4 px-0">
                     {bottomLinks.map((item) => {
                         const isActive = activeSection === item.id || hoveredSection === item.id;
@@ -282,7 +282,7 @@ const Hero = () => {
                 MOBILE BOTTOM DOCK
                 Edit this block to change Mobile layout only
             ========================================= */}
-            <div className="block md:hidden relative z-30 w-full h-[110px] sm:h-[130px] pb-6 px-4 shrink-0 mb-[160px] sm:mb-[160px]">
+            <div className="block md:hidden absolute bottom-[80px] left-0 right-0 z-30 w-full h-[110px] pb-6 px-4">
                 <div className="max-w-[1400px] mx-auto h-full flex flex-nowrap overflow-x-auto custom-scrollbar justify-start items-center gap-10 sm:gap-14 border-t border-white/10 pt-5 px-2">
                     {bottomLinks.map((item) => {
                         const isActive = activeSection === item.id || hoveredSection === item.id;
