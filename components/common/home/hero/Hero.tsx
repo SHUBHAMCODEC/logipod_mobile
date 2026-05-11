@@ -206,7 +206,7 @@ const Hero = () => {
                                 GLOBAL MOBILE CLOSE BUTTON (Phone Specific)
                                 Positioned above the scroll area
                             ========================================= */}
-                            <div className="md:hidden w-full flex justify-end px-4 pt-4 shrink-0 z-[260]">
+                            <div className="md:hidden w-full h-[70px] flex items-center justify-end px-4 shrink-0 z-[260]">
                                 <motion.button
                                     initial={{ scale: 0.8, opacity: 0 }}
                                     animate={{ scale: 1, opacity: 1 }}
@@ -218,8 +218,8 @@ const Hero = () => {
                                 </motion.button>
                             </div>
 
-                            <div className="w-full flex-1 overflow-y-auto lg:overflow-visible custom-scrollbar flex flex-col items-center pt-4 pb-32 md:pb-24 lg:pb-0 lg:pt-0 min-h-0">
-                                <div className="w-full my-auto flex flex-col items-center justify-center">
+                            <div className="w-full flex-1 overflow-y-auto lg:overflow-visible custom-scrollbar flex flex-col items-center pb-32 md:pb-24 lg:pb-0 lg:pt-0 min-h-0">
+                                <div className="w-full flex flex-col items-center justify-start">
                                     {/* Prioritize rendering based on the active or hovered section state to maintain exclusivity */}
                                     {(() => {
                                         const displaySection = activeSection !== "none" ? activeSection : hoveredSection;

@@ -152,7 +152,7 @@ const Hero_Business: React.FC<HeroBusinessProps> = ({ onClose }) => {
         <div className="w-full flex flex-col items-center relative z-50">
             <AnimatePresence mode="wait">
                 {step === "initial" && (
-                    <motion.div key="initial" variants={stageVariants} initial="hidden" animate="visible" exit="exit" className="w-full max-w-4xl flex flex-col items-center text-center relative px-4 pt-12 md:pt-16">
+                    <motion.div key="initial" variants={stageVariants} initial="hidden" animate="visible" exit="exit" className="w-full max-w-4xl flex flex-col items-center text-center relative px-4 pt-4 md:pt-16">
                         <CloseButton />
                         <motion.h2 variants={itemVariants} className="text-3xl sm:text-5xl md:text-6xl font-bold text-white mb-4 md:mb-6 tracking-tight leading-[1.1]">
                             Logistics tailored for <span className="text-[#F26341]">Business Needs.</span>
@@ -175,7 +175,7 @@ const Hero_Business: React.FC<HeroBusinessProps> = ({ onClose }) => {
                 )}
 
                 {step === "selection" && (
-                    <motion.div key="selection" variants={stageVariants} initial="hidden" animate="visible" exit="exit" className="w-full max-w-5xl flex flex-col px-4 md:px-6 relative pt-12 md:pt-16">
+                    <motion.div key="selection" variants={stageVariants} initial="hidden" animate="visible" exit="exit" className="w-full max-w-5xl flex flex-col px-4 md:px-6 relative pt-4 md:pt-16">
                         <div className="flex justify-between items-start w-full mb-6 md:mb-10">
                             <div className="flex items-center gap-3 md:gap-4 text-left">
                                 <div className="w-1 md:w-1.5 h-8 md:h-10 bg-[#F26341] rounded-full" />
@@ -221,7 +221,7 @@ const Hero_Business: React.FC<HeroBusinessProps> = ({ onClose }) => {
                 )}
 
                 {step === "sub-selection" && selectedCategory && (
-                    <motion.div key="sub-selection" variants={stageVariants} initial="hidden" animate="visible" exit="exit" className="w-full max-w-4xl flex flex-col px-4 md:px-6 relative pt-12 md:pt-16">
+                    <motion.div key="sub-selection" variants={stageVariants} initial="hidden" animate="visible" exit="exit" className="w-full max-w-4xl flex flex-col px-4 md:px-6 relative pt-4 md:pt-16">
                         <CloseButton />
                         <div className="flex items-center gap-3 md:gap-4 mb-6 md:mb-10 text-left">
                             <div className="w-1 md:w-1.5 h-8 md:h-10 bg-[#F26341] rounded-full" />

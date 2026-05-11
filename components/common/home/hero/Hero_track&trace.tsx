@@ -29,7 +29,7 @@ const Hero_track_trace: React.FC<HeroTrackProps> = ({ onClose }) => {
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 1.05 }}
-            className="flex flex-col items-center relative w-full max-w-2xl px-4 pt-12 md:pt-16"
+            className="flex flex-col items-center relative w-full max-w-4xl p-6 md:p-5 pt-4 md:pt-16"
         >
             {/* =========================================
                 MOBILE CLOSE BUTTON

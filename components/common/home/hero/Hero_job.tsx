@@ -31,7 +31,7 @@ const Hero_job: React.FC<HeroJobProps> = ({ onClose }) => {
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 1.05 }}
-            className="flex flex-col items-center relative w-full max-w-4xl p-6 md:p-5 pt-12 md:pt-16"
+            className="flex flex-col items-center relative w-full max-w-4xl pt-4 md:p-5 md:pt-16 px-4 pb-12"
         >
             {/* =========================================
                 MOBILE CLOSE BUTTON
