@@ -165,7 +165,7 @@ const Hero_Business: React.FC<HeroBusinessProps> = ({ onClose }) => {
                             <CloseButton />
                         </div>
 
-                        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 w-full mb-6 md:mb-10">
+                        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 w-full mb-4 md:mb-6">
                             {(flow === "service" ? serviceCategories : vendorCategories).map((cat, idx) => (
                                 <motion.button
                                     key={cat.id}
@@ -184,7 +184,7 @@ const Hero_Business: React.FC<HeroBusinessProps> = ({ onClose }) => {
                                 </motion.button>
                             ))}
                         </div>
-                        <motion.div variants={itemVariants} className="flex justify-between w-full mt-4 md:mt-6">
+                        <motion.div variants={itemVariants} className="flex justify-between w-full mt-2 md:mt-4">
                             <button onClick={() => setStep("initial")} className="px-6 md:px-10 py-3 md:py-4 rounded-xl border-2 border-white/20 text-white/80 bg-black/60 hover:bg-white hover:text-black transition-all cursor-pointer font-bold text-[10px] md:text-sm tracking-widest uppercase">Back</button>
                             <button
                                 onClick={() => {
@@ -209,7 +209,7 @@ const Hero_Business: React.FC<HeroBusinessProps> = ({ onClose }) => {
                             </div>
                         </div>
 
-                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6 w-full mb-6 md:mb-10">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6 w-full mb-4 md:mb-6">
                             {subSelections[selectedCategory]?.map((sub, idx) => (
                                 <motion.button
                                     key={sub.value}
@@ -222,7 +222,7 @@ const Hero_Business: React.FC<HeroBusinessProps> = ({ onClose }) => {
                                 </motion.button>
                             ))}
                         </div>
-                        <motion.div variants={itemVariants} className="flex justify-between w-full mt-4 md:mt-6">
+                        <motion.div variants={itemVariants} className="flex justify-between w-full mt-2 md:mt-4">
                             <button onClick={() => setStep("selection")} className="px-6 md:px-10 py-3 md:py-4 rounded-xl border-2 border-white/20 text-white/80 bg-black/60 hover:bg-white hover:text-black transition-all cursor-pointer font-bold text-[10px] md:text-sm tracking-widest uppercase">Back</button>
                             <button onClick={() => setStep("form")} disabled={!subSelected} className={`px-8 md:px-12 py-3 md:py-4 rounded-xl font-extrabold text-[10px] md:text-sm tracking-widest uppercase transition-all ${subSelected ? 'bg-white text-black hover:bg-[#F26341] hover:text-white cursor-pointer' : 'bg-white/10 text-white/20 cursor-not-allowed'}`}>Continue</button>
                         </motion.div>
@@ -236,10 +236,10 @@ const Hero_Business: React.FC<HeroBusinessProps> = ({ onClose }) => {
                         initial="hidden"
                         animate="visible"
                         exit="exit"
-                        className={`w-full ${flow === "service" ? 'max-w-[1000px]' : 'max-w-[900px]'} flex flex-col items-center relative px-2 sm:px-8 pt-8 md:pt-12`}
+                        className={`w-full ${flow === "service" ? 'max-w-[1000px]' : 'max-w-[900px]'} flex flex-col items-center relative -mt-4 md:-mt-12`}
                     >
                         <div className="absolute inset-0 bg-black/40 backdrop-blur-[80px] rounded-[15px] border border-white/10 -z-10 shadow-2xl" />
-                        <div className="w-full space-y-3 p-4 md:p-8 relative">
+                        <div className="w-full space-y-3 p-5 md:p-10 relative">
                             {flow === "service" ? (
                                 <>
                                     <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4">
@@ -327,7 +327,7 @@ const Hero_Business: React.FC<HeroBusinessProps> = ({ onClose }) => {
                                     <motion.div variants={itemVariants} className="w-full"><input type="text" placeholder="COMPANY WEBSITE" className={InputStyles} /></motion.div>
                                 </>
                             )}
-                            <motion.div variants={itemVariants} className="flex flex-col sm:flex-row justify-between items-center w-full gap-4 pt-6 md:pt-10">
+                            <motion.div variants={itemVariants} className="flex flex-col sm:flex-row justify-between items-center w-full gap-4 pt-4 md:pt-6">
                                 <button onClick={() => setStep(flow === "service" && selectedCategory !== "general" ? "sub-selection" : "selection")} className="w-full sm:w-auto px-12 md:px-16 py-3 md:py-4 rounded-[5px] border-2 border-white/20 text-white/80 bg-black/60 font-bold text-[10px] md:text-[12px] tracking-[0.2em] uppercase hover:bg-white hover:text-black transition-all cursor-pointer">BACK</button>
                                 <button className="w-full sm:w-auto px-12 md:px-16 py-3 md:py-4 rounded-[5px] bg-[#F26341] text-white font-extrabold text-[10px] md:text-[12px] tracking-[0.2em] uppercase hover:bg-[#ff7a5c] transition-all transform active:scale-95 cursor-pointer shadow-lg">SUBMIT INQUIRY</button>
                             </motion.div>

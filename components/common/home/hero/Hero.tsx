@@ -227,22 +227,23 @@ const Hero = () => {
                         </motion.div>
                     )}
                 </AnimatePresence>
-            </div>
-
-            {/* Bottom Dock - Structurally perfect: Uses margin instead of translation to prevent any overlapping or collision */}
-            <div className="relative z-30 w-full h-[110px] sm:h-[130px] md:h-[150px] pb-6 md:pb-8 px-4 md:px-12 shrink-0 mb-20 sm:mb-16 md:mb-6 lg:mb-0">
-                <div className="max-w-[1400px] mx-auto h-full flex flex-nowrap overflow-x-auto lg:overflow-visible custom-scrollbar justify-start md:justify-center items-center gap-10 sm:gap-14 md:gap-24 border-t border-white/10 pt-5 md:pt-8 px-2 md:px-0">
+            </div>            {/* =========================================
+                DESKTOP / PC BOTTOM DOCK
+                Edit this block to change PC layout only
+            ========================================= */}
+            <div className="hidden md:block relative z-30 w-full h-[100px] px-12 shrink-0 mb-0">
+                <div className="max-w-[1400px] mx-auto h-full flex flex-nowrap overflow-visible justify-center items-center gap-24 border-t border-white/10 pt-4 px-0">
                     {bottomLinks.map((item) => {
                         const isActive = activeSection === item.id || hoveredSection === item.id;
 
                         return (
                             <motion.div
-                                key={item.id}
+                                key={`desktop-${item.id}`}
                                 onMouseEnter={() => handleMouseEnter(item.id as Section)}
                                 onMouseLeave={handleMouseLeave}
                                 onClick={() => setActiveSection(item.id as Section)}
                                 whileHover={{ y: -6 }}
-                                className="relative group flex flex-col items-center gap-3 md:gap-5 cursor-pointer shrink-0 py-2"
+                                className="relative group flex flex-col items-center gap-5 cursor-pointer shrink-0 py-2"
                             >
                                 <motion.div
                                     animate={{
@@ -250,25 +251,75 @@ const Hero = () => {
                                         y: isActive ? -6 : 0
                                     }}
                                     transition={{ type: "spring", stiffness: 400, damping: 25 }}
-                                    className={`relative z-10 transition-all scale-80 md:scale-100 ${isActive ? 'text-[#F26341]' : 'text-white/60 group-hover:text-white/90'}`}
+                                    className={`relative z-10 transition-all scale-100 ${isActive ? 'text-[#F26341]' : 'text-white/60 group-hover:text-white/90'}`}
                                 >
                                     {item.renderIcon(isActive)}
                                     {isActive && (
                                         <motion.div
-                                            layoutId="icon-glow"
+                                            layoutId="icon-glow-desktop"
                                             className="absolute inset-0 bg-[#F26341]/30 blur-2xl rounded-full -z-10"
                                         />
                                     )}
                                 </motion.div>
 
-                                <span className={`uppercase text-[10px] md:text-[12px] font-bold tracking-[0.15em] transition-all duration-300 ${isActive ? 'text-white translate-y-1' : 'text-white/50 group-hover:text-white'}`}>
+                                <span className={`uppercase text-[12px] font-bold tracking-[0.15em] transition-all duration-300 ${isActive ? 'text-white translate-y-1' : 'text-white/50 group-hover:text-white'}`}>
                                     {item.label}
                                 </span>
 
                                 {isActive && (
                                     <motion.div
-                                        layoutId="active-indicator"
-                                        className="absolute -bottom-3 md:-bottom-5 w-10 md:w-16 h-[3px] bg-[#F26341] rounded-full shadow-[0_0_20px_rgba(242,99,65,0.9)]"
+                                        layoutId="active-indicator-desktop"
+                                        className="absolute -bottom-5 w-16 h-[3px] bg-[#F26341] rounded-full shadow-[0_0_20px_rgba(242,99,65,0.9)]"
+                                    />
+                                )}
+                            </motion.div>
+                        );
+                    })}
+                </div>
+            </div>
+
+            {/* =========================================
+                MOBILE BOTTOM DOCK
+                Edit this block to change Mobile layout only
+            ========================================= */}
+            <div className="block md:hidden relative z-30 w-full h-[110px] sm:h-[130px] pb-6 px-4 shrink-0 mb-32 sm:mb-24">
+                <div className="max-w-[1400px] mx-auto h-full flex flex-nowrap overflow-x-auto custom-scrollbar justify-start items-center gap-10 sm:gap-14 border-t border-white/10 pt-5 px-2">
+                    {bottomLinks.map((item) => {
+                        const isActive = activeSection === item.id || hoveredSection === item.id;
+
+                        return (
+                            <motion.div
+                                key={`mobile-${item.id}`}
+                                onMouseEnter={() => handleMouseEnter(item.id as Section)}
+                                onMouseLeave={handleMouseLeave}
+                                onClick={() => setActiveSection(item.id as Section)}
+                                className="relative flex flex-col items-center gap-3 cursor-pointer shrink-0 py-2"
+                            >
+                                <motion.div
+                                    animate={{
+                                        scale: isActive ? 1.2 : 0.9,
+                                        y: isActive ? -6 : 0
+                                    }}
+                                    transition={{ type: "spring", stiffness: 400, damping: 25 }}
+                                    className={`relative z-10 transition-all scale-80 ${isActive ? 'text-[#F26341]' : 'text-white/60'}`}
+                                >
+                                    {item.renderIcon(isActive)}
+                                    {isActive && (
+                                        <motion.div
+                                            layoutId="icon-glow-mobile"
+                                            className="absolute inset-0 bg-[#F26341]/30 blur-2xl rounded-full -z-10"
+                                        />
+                                    )}
+                                </motion.div>
+
+                                <span className={`uppercase text-[10px] font-bold tracking-[0.15em] transition-all duration-300 ${isActive ? 'text-white translate-y-1' : 'text-white/50'}`}>
+                                    {item.label}
+                                </span>
+
+                                {isActive && (
+                                    <motion.div
+                                        layoutId="active-indicator-mobile"
+                                        className="absolute -bottom-3 w-10 h-[3px] bg-[#F26341] rounded-full shadow-[0_0_20px_rgba(242,99,65,0.9)]"
                                     />
                                 )}
                             </motion.div>
