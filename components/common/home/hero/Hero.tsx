@@ -206,7 +206,7 @@ const Hero = () => {
                                 GLOBAL MOBILE CLOSE BUTTON (Phone Specific)
                                 Positioned above the scroll area
                             ========================================= */}
-                            <div className="md:hidden w-full h-[80px] flex items-center justify-end px-4 shrink-0 z-[260]">
+                            <div className="md:hidden w-full h-[65px] flex items-end justify-end px-4 shrink-0 z-[260]">
                                 <motion.button
                                     initial={{ scale: 0.8, opacity: 0 }}
                                     animate={{ scale: 1, opacity: 1 }}
