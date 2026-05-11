@@ -101,7 +101,7 @@ const Hero_services: React.FC<HeroServicesProps> = ({ onClose }) => {
       initial={{ opacity: 0, scale: 0.95 }}
       animate={{ opacity: 1, scale: 1 }}
       exit={{ opacity: 0, scale: 1.05 }}
-      className="flex flex-col items-center relative w-full max-w-4xl px-2 sm:px-4 min-h-[400px] pt-12 sm:pt-16"
+      className="flex flex-col items-center relative w-full max-w-4xl px-2 sm:px-4 min-h-[400px] pt-16 md:pt-20"
     >
       {/* =========================================
           MOBILE CLOSE BUTTON
