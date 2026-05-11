@@ -202,7 +202,7 @@ const Hero = () => {
                             transition={{ duration: 0.7, ease: [0.25, 1, 0.5, 1] as const }}
                             className="absolute inset-0 flex flex-col items-center px-2 sm:px-4"
                         >
-                            <div className="w-full h-full overflow-y-auto custom-scrollbar flex flex-col items-center py-6">
+                            <div className="w-full h-full overflow-y-auto lg:overflow-visible custom-scrollbar flex flex-col items-center pt-6 pb-32 md:pb-24 lg:pb-0 lg:pt-0">
                                 <div className="w-full my-auto flex flex-col items-center justify-center">
                                 {/* Prioritize rendering based on the active or hovered section state to maintain exclusivity */}
                                 {(() => {
@@ -230,7 +230,7 @@ const Hero = () => {
             </div>
 
             {/* Bottom Dock - Structurally perfect: Uses margin instead of translation to prevent any overlapping or collision */}
-            <div className="relative z-30 w-full h-[110px] sm:h-[130px] md:h-[150px] pb-6 md:pb-8 px-4 md:px-12 shrink-0 mb-20 sm:mb-16 md:mb-12">
+            <div className="relative z-30 w-full h-[110px] sm:h-[130px] md:h-[150px] pb-6 md:pb-8 px-4 md:px-12 shrink-0 mb-20 sm:mb-16 md:mb-6 lg:mb-0">
                 <div className="max-w-[1400px] mx-auto h-full flex flex-nowrap overflow-x-auto lg:overflow-visible custom-scrollbar justify-start md:justify-center items-center gap-10 sm:gap-14 md:gap-24 border-t border-white/10 pt-5 md:pt-8 px-2 md:px-0">
                     {bottomLinks.map((item) => {
                         const isActive = activeSection === item.id || hoveredSection === item.id;

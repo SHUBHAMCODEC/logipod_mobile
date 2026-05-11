@@ -101,10 +101,10 @@ const Hero_services: React.FC<HeroServicesProps> = ({ onClose }) => {
       initial={{ opacity: 0, scale: 0.95 }}
       animate={{ opacity: 1, scale: 1 }}
       exit={{ opacity: 0, scale: 1.05 }}
-      className="flex flex-col items-center relative w-full max-w-4xl px-2 sm:px-4 min-h-[400px]"
+      className="flex flex-col items-center relative w-full max-w-4xl px-2 sm:px-4 min-h-[400px] pt-12 sm:pt-16"
     >
       {/* Standardized Close Button */}
-      <div className="w-full flex justify-end mb-4 sm:mb-0 sm:absolute sm:top-4 sm:right-4 z-[70] pr-2 sm:pr-0">
+      <div className="absolute top-0 right-2 sm:right-4 z-[70]">
         <motion.button
           initial={{ scale: 0.8, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
