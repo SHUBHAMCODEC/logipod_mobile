@@ -204,24 +204,24 @@ const Hero = () => {
                         >
                             <div className="w-full h-full overflow-y-auto lg:overflow-visible custom-scrollbar flex flex-col items-center pt-6 pb-32 md:pb-24 lg:pb-0 lg:pt-0">
                                 <div className="w-full my-auto flex flex-col items-center justify-center">
-                                {/* Prioritize rendering based on the active or hovered section state to maintain exclusivity */}
-                                {(() => {
-                                    const displaySection = activeSection !== "none" ? activeSection : hoveredSection;
-                                    switch (displaySection) {
-                                        case "business":
-                                            return <Hero_Business onClose={() => { setActiveSection("none"); setHoveredSection("none"); }} />;
-                                        case "track":
-                                            return <Hero_track_trace onClose={() => { setActiveSection("none"); setHoveredSection("none"); }} />;
-                                        case "services":
-                                            return <Hero_services onClose={() => { setActiveSection("none"); setHoveredSection("none"); }} />;
-                                        case "info":
-                                            return <Hero_GetToKnow onClose={() => { setActiveSection("none"); setHoveredSection("none"); }} />;
-                                        case "jobs":
-                                            return <Hero_Job onClose={() => { setActiveSection("none"); setHoveredSection("none"); }} />;
-                                        default:
-                                            return null;
-                                    }
-                                })()}
+                                    {/* Prioritize rendering based on the active or hovered section state to maintain exclusivity */}
+                                    {(() => {
+                                        const displaySection = activeSection !== "none" ? activeSection : hoveredSection;
+                                        switch (displaySection) {
+                                            case "business":
+                                                return <Hero_Business onClose={() => { setActiveSection("none"); setHoveredSection("none"); }} />;
+                                            case "track":
+                                                return <Hero_track_trace onClose={() => { setActiveSection("none"); setHoveredSection("none"); }} />;
+                                            case "services":
+                                                return <Hero_services onClose={() => { setActiveSection("none"); setHoveredSection("none"); }} />;
+                                            case "info":
+                                                return <Hero_GetToKnow onClose={() => { setActiveSection("none"); setHoveredSection("none"); }} />;
+                                            case "jobs":
+                                                return <Hero_Job onClose={() => { setActiveSection("none"); setHoveredSection("none"); }} />;
+                                            default:
+                                                return null;
+                                        }
+                                    })()}
                                 </div>
                             </div>
                         </motion.div>
@@ -231,7 +231,7 @@ const Hero = () => {
                 DESKTOP / PC BOTTOM DOCK
                 Edit this block to change PC layout only
             ========================================= */}
-            <div className="hidden md:block relative z-30 w-full h-[100px] px-12 shrink-0 mb-10">
+            <div className="hidden md:block relative z-30 w-full h-[100px] px-12 shrink-0 mb-20">
                 <div className="max-w-[1400px] mx-auto h-full flex flex-nowrap overflow-visible justify-center items-center gap-24 border-t border-white/10 pt-4 px-0">
                     {bottomLinks.map((item) => {
                         const isActive = activeSection === item.id || hoveredSection === item.id;
