@@ -257,7 +257,7 @@ const Hero_Business: React.FC<HeroBusinessProps> = ({ onClose }) => {
                         initial="hidden"
                         animate="visible"
                         exit="exit"
-                        className={`w-full ${flow === "service" ? 'max-w-[1000px]' : 'max-w-[900px]'} flex flex-col items-center relative -mt-4 md:-mt-12`}
+                        className={`w-full ${flow === "service" ? 'max-w-[1000px]' : 'max-w-[900px]'} flex flex-col items-center relative -mt-6 md:-mt-16`}
                     >
                         <div className="absolute inset-0 bg-black/40 backdrop-blur-[80px] rounded-[15px] border border-white/10 -z-10 shadow-2xl" />
                         <div className="w-full space-y-3 p-4 md:p-6 pb-6 md:pb-8 relative">
@@ -348,7 +348,7 @@ const Hero_Business: React.FC<HeroBusinessProps> = ({ onClose }) => {
                                     <motion.div variants={itemVariants} className="w-full"><input type="text" placeholder="COMPANY WEBSITE" className={InputStyles} /></motion.div>
                                 </>
                             )}
-                            <motion.div variants={itemVariants} className="flex flex-col sm:flex-row justify-between items-center w-full gap-4 pt-2 md:pt-4">
+                            <motion.div variants={itemVariants} className="flex flex-col sm:flex-row justify-between items-center w-full gap-4 pt-0">
                                 <button onClick={() => setStep(flow === "service" && selectedCategory !== "general" ? "sub-selection" : "selection")} className="w-full sm:w-auto px-12 md:px-16 py-3 md:py-4 rounded-[5px] border-2 border-white/20 text-white/80 bg-black/60 font-bold text-[10px] md:text-[12px] tracking-[0.2em] uppercase hover:bg-white hover:text-black transition-all cursor-pointer">BACK</button>
                                 <button className="w-full sm:w-auto px-12 md:px-16 py-3 md:py-4 rounded-[5px] bg-[#F26341] text-white font-extrabold text-[10px] md:text-[12px] tracking-[0.2em] uppercase hover:bg-[#ff7a5c] transition-all transform active:scale-95 cursor-pointer shadow-lg">SUBMIT INQUIRY</button>
                             </motion.div>
