@@ -284,7 +284,7 @@ const Hero = () => {
                 MOBILE BOTTOM DOCK
                 Edit this block to change Mobile layout only
             ========================================= */}
-            <div className="block md:hidden relative z-30 w-full h-[100px] pb-3 px-4 shrink-0 mb-[60px] sm:mb-[80px]">
+            <div className="block md:hidden relative z-30 w-full h-[100px] pb-3 px-4 shrink-0 mb-[150px] sm:mb-[80px]">
                 <div className="max-w-[1400px] mx-auto h-full flex flex-nowrap overflow-x-auto custom-scrollbar justify-start items-center gap-10 sm:gap-14 border-t border-white/10 pt-4 px-2">
                     {bottomLinks.map((item) => {
                         const isActive = activeSection === item.id || hoveredSection === item.id;
