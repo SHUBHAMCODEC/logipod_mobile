@@ -37,7 +37,7 @@ const Hero_job: React.FC<HeroJobProps> = ({ onClose }) => {
                 MOBILE CLOSE BUTTON
                 Edit this block to change Mobile (X) position
             ========================================= */}
-            <div className="md:hidden absolute -top-12 right-4 z-[250]">
+            <div className="hidden absolute -top-12 right-4 z-[250]">
                 <motion.button
                     initial={{ scale: 0.8, opacity: 0 }}
                     animate={{ scale: 1, opacity: 1 }}

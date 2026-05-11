@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { MoveRight } from "lucide-react";
+import { MoveRight, X } from "lucide-react";
 import { NoiseBackground } from "@/components/ui/noise-background";
 import { motion, AnimatePresence } from "motion/react";
 
@@ -202,7 +202,23 @@ const Hero = () => {
                             transition={{ duration: 0.7, ease: [0.25, 1, 0.5, 1] as const }}
                             className="absolute inset-0 flex flex-col items-center px-2 sm:px-4"
                         >
-                            <div className="w-full h-full overflow-y-auto lg:overflow-visible custom-scrollbar flex flex-col items-center pt-16 pb-32 md:pb-24 lg:pb-0 lg:pt-0">
+                            {/* =========================================
+                                GLOBAL MOBILE CLOSE BUTTON (Phone Specific)
+                                Positioned above the scroll area
+                            ========================================= */}
+                            <div className="md:hidden w-full flex justify-end px-4 pt-4 shrink-0 z-[260]">
+                                <motion.button
+                                    initial={{ scale: 0.8, opacity: 0 }}
+                                    animate={{ scale: 1, opacity: 1 }}
+                                    whileTap={{ scale: 0.9 }}
+                                    onClick={() => { setActiveSection("none"); setHoveredSection("none"); }}
+                                    className="w-10 h-10 rounded-full border border-white/30 bg-black/50 text-white flex items-center justify-center backdrop-blur-md"
+                                >
+                                    <X className="w-5 h-5 stroke-[2.5]" />
+                                </motion.button>
+                            </div>
+
+                            <div className="w-full flex-1 overflow-y-auto lg:overflow-visible custom-scrollbar flex flex-col items-center pt-4 pb-32 md:pb-24 lg:pb-0 lg:pt-0 min-h-0">
                                 <div className="w-full my-auto flex flex-col items-center justify-center">
                                     {/* Prioritize rendering based on the active or hovered section state to maintain exclusivity */}
                                     {(() => {
@@ -282,9 +298,9 @@ const Hero = () => {
 
             {/* =========================================
                 MOBILE BOTTOM DOCK
-                Edit this block to change Mobile layout only
+                Optimized for Small Android (360), iPhone (390), Pro Max (430)
             ========================================= */}
-            <div className="block md:hidden relative z-30 w-full h-[120px] pb-10 px-4 shrink-0 mb-[80px] sm:mb-[100px]">
+            <div className="block md:hidden relative z-30 w-full h-[100px] max-[430px]:h-[85px] pb-6 px-4 shrink-0 mb-[60px] max-[360px]:mb-[40px] max-[430px]:mb-[50px] sm:mb-[100px]">
                 <div className="max-w-[1400px] mx-auto h-full flex flex-nowrap overflow-x-auto custom-scrollbar justify-start items-center gap-10 sm:gap-14 border-t border-white/10 pt-4 px-2">
                     {bottomLinks.map((item) => {
                         const isActive = activeSection === item.id || hoveredSection === item.id;
