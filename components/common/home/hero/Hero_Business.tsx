@@ -85,12 +85,12 @@ const Hero_Business: React.FC<HeroBusinessProps> = ({ onClose }) => {
             MOBILE CLOSE BUTTON
             Edit this block to change Mobile (X) position
         ========================================= */}
-        <div className="md:hidden absolute top-2 right-3 z-[70]">
+        <div className="md:hidden fixed top-4 right-4 z-[200]">
           <motion.button
             initial={{ scale: 0.8, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             onClick={onClose}
-            className="w-10 h-10 rounded-full border-2 border-white/40 bg-black/40 hover:bg-white hover:border-white transition-all cursor-pointer flex items-center justify-center backdrop-blur-md"
+            className="w-10 h-10 rounded-full border-2 border-white/40 bg-black/60 hover:bg-white hover:border-white transition-all cursor-pointer flex items-center justify-center backdrop-blur-md"
           >
             <X className="w-5 h-5 text-white transition-colors" />
           </motion.button>
