@@ -8,31 +8,31 @@ const testimonials = [
   {
     name: "Ashok Jangra",
     designation: "CEO & Founder",
-    src: "/images/company/Ashok.webp",
+    src: "/images/company/ashok.webp",
     quote: "Building Logipod was about solving a problem I lived every day — unpredictability in Indian freight. Technology is the answer.",
   },
   {
     name: "Satkar Grewal",
     designation: "CTO & Co-Founder",
-    src: "/images/company/Satkar.webp",
+    src: "/images/company/satkar.webp",
     quote: "Every line of code we ship represents thousands of shipments moving more efficiently. That's what drives our engineering culture.",
   },
   {
     name: "Madan Rajput",
     designation: "Head FTL & EXIM",
-    src: "/images/company/Madan.png",
+    src: "/images/company/madan.png",
     quote: "Logistics is about trust. When a client calls at 2 AM, we answer — and that commitment runs deep through every team at Logipod.",
   },
   {
     name: "Ankit Srivastava",
     designation: "Lead — Central Supply",
-    src: "/images/company/Ankit.jpg",
+    src: "/images/company/ankit.jpg",
     quote: "Our clients don't just use our platform — they grow with us. Watching a small shipper scale to enterprise is incredibly rewarding.",
   },
   {
     name: "Devashish Tiwari",
     designation: "Senior Manager — HR",
-    src: "/images/company/Dewashish.jpeg",
+    src: "/images/company/dewashish.jpeg",
     quote: "Culture isn't a poster on the wall. It's how we treat each other on tough days, and why people choose to stay and grow here.",
   },
 ];
