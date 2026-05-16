@@ -117,9 +117,9 @@ export default function Header() {
                             <img 
                                 src={client.image} 
                                 alt={client.name} 
-                                className="h-12 w-auto object-contain grayscale brightness-200 opacity-60 group-hover:grayscale-0 group-hover:brightness-100 group-hover:opacity-100 transition-all duration-500"
+                                className="h-12 w-auto object-contain grayscale-0 brightness-100 opacity-100 md:grayscale md:brightness-200 md:opacity-60 group-hover:grayscale-0 group-hover:brightness-100 group-hover:opacity-100 transition-all duration-500"
                             />
-                            <h3 className="text-xl md:text-2xl font-black text-transparent bg-clip-text bg-white/20 uppercase tracking-[0.15em] group-hover:bg-white/90 transition-all duration-500 whitespace-nowrap">
+                            <h3 className="text-xl md:text-2xl font-black text-transparent bg-clip-text bg-white/90 md:bg-white/20 uppercase tracking-[0.15em] group-hover:bg-white/90 transition-all duration-500 whitespace-nowrap">
                                 {client.name}
                             </h3>
                         </div>

@@ -14,41 +14,26 @@ const offices = [
         mapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d209.73433677522195!2d77.0855606902528!3d28.497138621507244!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d190007e78df1%3A0x47a79c948d1df2f1!2sSharkship!5e1!3m2!1sen!2sin!4v1777446251728!5m2!1sen!2sin"
     },
     {
-        city: "Mumbai",
-        title: "Regional Office",
-        address: "Location details pending... \n(Will be updated soon)",
-        mapUrl: "#",
-        mapEmbedUrl: ""
-    },
-    {
-        city: "Chennai",
-        title: "Regional Office",
-        address: "Location details pending... \n(Will be updated soon)",
-        mapUrl: "#",
-        mapEmbedUrl: ""
-    },
-    {
         city: "Kolkata",
         title: "Regional Office",
-        address: "Location details pending... \n(Will be updated soon)",
-        mapUrl: "#",
-        mapEmbedUrl: ""
+        address: "Kolkata Region\n22°40'44.4\"N 88°18'07.3\"E",
+        mapUrl: "https://www.google.com/maps?q=22.678991679416107,88.29945587530362",
+        mapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3523.141797742998!2d88.29945587530362!3d22.678991679416107!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjLCsDQwJzQ0LjQiTiA4OMKwMTgnMDcuMyJF!5e1!3m2!1sen!2sin!4v1778910299457!5m2!1sen!2sin"
     },
     {
-        city: "Bangalore",
+        city: "Belagavi",
         title: "Regional Office",
-        address: "Location details pending... \n(Will be updated soon)",
-        mapUrl: "#",
-        mapEmbedUrl: ""
+        address: "Athani Residency Park, NH-4\nNipani, Karnataka",
+        mapUrl: "https://www.google.com/maps?q=16.39639267,74.37453626",
+        mapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3663.0939442400013!2d74.37453626!3d16.39639267!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc0f3713ee81509%3A0xdeb8db897587a2db!2sAthani%20Residency%20Park!5e1!3m2!1sen!2sin!4v1778910318207!5m2!1sen!2sin"
     },
     {
-        city: "Hyderabad",
+        city: "Uttarakhand",
         title: "Regional Office",
-        address: "Location details pending... \n(Will be updated soon)",
-        mapUrl: "#",
-        mapEmbedUrl: ""
-    },
-
+        address: "Uttarakhand Region\n29°56'03.4\"N 78°04'32.5\"E",
+        mapUrl: "https://www.google.com/maps?q=29.934283574979215,78.07312217554953",
+        mapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3309.002391271959!2d78.07312217554953!3d29.934283574979215!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjnCsDU2JzAzLjQiTiA3OMKwMDQnMzIuNSJF!5e1!3m2!1sen!2sin!4v1778910336314!5m2!1sen!2sin"
+    }
 ];
 
 export default function Office_location() {
@@ -87,7 +72,7 @@ export default function Office_location() {
                 </div>
 
                 {/* 3D Cards Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-12 max-w-4xl mx-auto">
                     {offices.map((office, idx) => (
                         <motion.div
                             initial={{ opacity: 0, y: 30 }}
@@ -95,10 +80,9 @@ export default function Office_location() {
                             viewport={{ once: true }}
                             transition={{ duration: 0.5, delay: idx * 0.1 }}
                             key={idx}
-                            /* Center the 7th card in the 3rd row (which has 3 columns) */
-                            className={idx === 6 ? "lg:col-start-2" : ""}
+                            className="w-full h-full block"
                         >
-                            <CardContainer containerClassName="py-0 flex items-center justify-center h-full">
+                            <CardContainer className="w-full" containerClassName="py-0 flex items-center justify-center h-full w-full">
                                 <CardBody className="bg-[#FAFAFA] border border-gray-100 relative group/card hover:shadow-2xl hover:shadow-[#272D6D]/5 w-full h-full rounded-[1.5rem] p-6 lg:p-8 flex flex-col justify-between transition-all duration-300 !w-full !h-auto min-h-[460px]">
 
                                     <div className="flex flex-col gap-5">

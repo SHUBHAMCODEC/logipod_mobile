@@ -258,7 +258,7 @@ const Hero_Business: React.FC<HeroBusinessProps> = ({ onClose }) => {
                         initial="hidden"
                         animate="visible"
                         exit="exit"
-                        className={`w-full ${flow === "service" ? 'max-w-[1000px]' : 'max-w-[900px]'} flex flex-col items-center relative -mt-6 md:-mt-16`}
+                        className={`w-full ${flow === "service" ? 'max-w-[1000px]' : 'max-w-[900px]'} flex flex-col items-center relative mt-4 md:mt-8`}
                     >
                         <div className="absolute inset-0 bg-black/40 backdrop-blur-[80px] rounded-[15px] border border-white/10 -z-10 shadow-2xl" />
                         <div className="w-full space-y-3 p-4 md:p-6 pb-6 md:pb-8 relative">

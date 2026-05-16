@@ -114,7 +114,7 @@ const TestimonialCard = ({ testimonial, isActive }: { testimonial: any, isActive
                             src={testimonial.logo}
                             alt={testimonial.company}
                             fill
-                            className="object-contain p-2 grayscale brightness-200 opacity-80 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500"
+                            className="object-contain p-2 grayscale-0 brightness-100 opacity-100 md:grayscale md:brightness-200 md:opacity-80 group-hover:grayscale-0 group-hover:brightness-100 group-hover:opacity-100 transition-all duration-500"
                         />
                     </div>
                     <div className="flex-1 min-w-0">

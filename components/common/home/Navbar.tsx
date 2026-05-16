@@ -12,6 +12,7 @@ const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+  const navRef = React.useRef<HTMLDivElement>(null);
 
   const languages = [
     { code: "EN", name: "English" },
@@ -33,8 +34,8 @@ const Navbar = () => {
       label: "Solutions",
       href: "/#",
       items: [
-        { name: "Warehousing", href: "/warehousing" },
-        { name: "Yard Management", href: "/yard-management" }
+        { name: "Warehousing", href: "/#", comingSoon: true },
+        { name: "Yard Management", href: "/#", comingSoon: true }
       ]
     },
     {
@@ -58,6 +59,17 @@ const Navbar = () => {
     }
   }, [isMenuOpen]);
 
+  // Close dropdown when clicking outside the nav
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      if (navRef.current && !navRef.current.contains(e.target as Node)) {
+        setOpenDropdown(null);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
   // Split links for desktop center-logo layout
   const leftLinks = navLinks.slice(0, 3);
   const rightLinks = navLinks.slice(3);
@@ -67,34 +79,49 @@ const Navbar = () => {
     const isOpen = openDropdown === link.label;
 
     return (
-      <div
-        className="relative"
-        onMouseEnter={() => !isMobile && hasItems && setOpenDropdown(link.label)}
-        onMouseLeave={() => !isMobile && setOpenDropdown(null)}
-      >
-        <Link
-          href={link.href}
-          className={`flex items-center gap-1 cursor-pointer py-4 group transition-all ${isMobile ? "text-2xl font-bold text-white" : "text-[15px] font-bold tracking-wide text-[#272D6D]"
+      <div className="relative">
+        {hasItems ? (
+          <button
+            onClick={() => setOpenDropdown(isOpen ? null : link.label)}
+            className={`flex items-center gap-1 cursor-pointer py-4 group transition-all ${
+              isMobile ? "text-2xl font-bold text-white" : "text-[15px] font-bold tracking-wide text-[#272D6D]"
             }`}
-        >
-          <span className="transition-colors duration-300 group-hover:text-[#F36440]">{link.label}</span>
-          {hasItems && (
-            <ChevronDown className={`w-3 h-3 transition-transform duration-300 ${isMobile ? "text-white/40" : "text-[#272D6D]/40"
-              } ${isOpen ? 'rotate-180' : ''}`} />
-          )}
-        </Link>
+          >
+            <span className={`transition-colors duration-300 ${isOpen ? "text-[#F36440]" : "group-hover:text-[#F36440]"}`}>{link.label}</span>
+            <ChevronDown className={`w-3 h-3 transition-transform duration-300 ${
+              isMobile ? "text-white/40" : "text-[#272D6D]/40"
+            } ${isOpen ? 'rotate-180' : ''}`} />
+          </button>
+        ) : (
+          <Link
+            href={link.href}
+            className={`flex items-center gap-1 cursor-pointer py-4 group transition-all ${
+              isMobile ? "text-2xl font-bold text-white" : "text-[15px] font-bold tracking-wide text-[#272D6D]"
+            }`}
+          >
+            <span className="transition-colors duration-300 group-hover:text-[#F36440]">{link.label}</span>
+          </Link>
+        )}
 
         {/* Dropdown Menu - Desktop Only */}
-        {!isMobile && hasItems && isOpen && (
-          <div className="absolute top-[90%] left-0 w-56 bg-white border border-gray-100 rounded-2xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.1)] z-[110] animate-in fade-in slide-in-from-top-2 duration-300">
+        {!isMobile && hasItems && (
+          <div className={`absolute top-[90%] left-0 w-56 bg-white border border-gray-100 rounded-2xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.1)] z-[110] transition-all duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] ${
+            isOpen ? "opacity-100 visible translate-y-0" : "opacity-0 invisible -translate-y-1 pointer-events-none"
+          }`}>
             <div className="p-2 flex flex-col gap-1">
               {link.items.map((item: any) => (
                 <Link
                   key={item.name}
                   href={item.href}
-                  className="px-4 py-3 text-[13px] font-bold tracking-wider text-[#272D6D] hover:bg-[#F36440] hover:text-white rounded-lg transition-all"
+                  onClick={() => setOpenDropdown(null)}
+                  className="px-4 py-3 text-[13px] font-bold tracking-wider text-[#272D6D] hover:bg-[#F36440] hover:text-white rounded-lg transition-all flex items-center justify-between group/desk"
                 >
-                  {item.name}
+                  <span>{item.name}</span>
+                  {item.comingSoon && (
+                    <span className="ml-2 px-2 py-0.5 text-[9px] uppercase tracking-wider bg-[#F36440]/10 text-[#F36440] group-hover/desk:bg-white/20 group-hover/desk:text-white rounded-full">
+                      Coming Soon
+                    </span>
+                  )}
                 </Link>
               ))}
             </div>
@@ -106,7 +133,7 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="fixed top-[10px] md:top-[25px] left-1/2 -translate-x-1/2 z-[100] flex items-center justify-between px-4 md:px-10 py-3 md:py-4 bg-[#FAFAFA]/95 backdrop-blur-md border border-gray-200/50 rounded-[32px] w-[96%] max-w-[1500px] shadow-[0_10px_35px_rgba(0,0,0,0.05)] transition-all duration-500 hover:shadow-[0_15px_45px_rgba(0,0,0,0.08)]">
+      <nav ref={navRef} className="fixed top-[10px] md:top-[25px] left-1/2 -translate-x-1/2 z-[100] flex items-center justify-between px-4 md:px-10 py-3 md:py-4 bg-[#FAFAFA]/95 backdrop-blur-md border border-gray-200/50 rounded-[32px] w-[96%] max-w-[1500px] shadow-[0_10px_35px_rgba(0,0,0,0.05)] transition-all duration-500 hover:shadow-[0_15px_45px_rgba(0,0,0,0.08)]">
 
         {/* Left Section: Nav Links (Desktop Only) */}
         <div className="hidden xl:flex items-center gap-[90px] xl:gap-12 xl:ml-15">
@@ -290,7 +317,14 @@ const Navbar = () => {
                                   onClick={() => setIsMenuOpen(false)}
                                   className="text-white/60 text-lg font-semibold hover:text-white flex items-center justify-between group/item"
                                 >
-                                  {item.name}
+                                  <div className="flex items-center gap-2">
+                                    <span>{item.name}</span>
+                                    {item.comingSoon && (
+                                      <span className="px-2 py-0.5 text-[9px] uppercase font-black tracking-wider bg-[#F36440]/20 text-[#F36440] rounded-full">
+                                        Coming Soon
+                                      </span>
+                                    )}
+                                  </div>
                                   <ArrowRight className="w-5 h-5 opacity-0 group-hover/item:opacity-100 -translate-x-2 group-hover/item:translate-x-0 transition-all text-[#F36440]" />
                                 </Link>
                               ))}

@@ -2,26 +2,21 @@
     {
         "id": 1,
         "occasionName": "Diwali",
-        "image": "/images/diwali.jpg"
+        "image": "/images/culture/diwali.webp"
     },
     {
         "id": 2,
         "occasionName": "Holi",
-        "image": "/images/holi.jpg"
+        "image": "/images/culture/holi.webp"
     },
     {
         "id": 3,
         "occasionName": "Eid",
-        "image": "/images/eid.jpg"
+        "image": "/images/culture/eid.webp"
     },
     {
         "id": 4,
         "occasionName": "Christmas",
-        "image": "/images/christmas.jpg"
-    },
-    {
-        "id": 5,
-        "occasionName": "Navratri",
-        "image": "/images/navratri.jpg"
+        "image": "/images/culture/chrismas.webp"
     }
 ]
