@@ -78,6 +78,11 @@ const Navbar = () => {
             }`}
         >
           <span className="transition-colors duration-300 group-hover:text-[#F36440]">{link.label}</span>
+          {link.label === "Solutions" && (
+            <span className="px-1.5 py-0.5 text-[8px] font-black uppercase tracking-tighter bg-[#F36440] text-white rounded-[4px] leading-none">
+              Soon
+            </span>
+          )}
           {hasItems && (
             <ChevronDown className={`w-3 h-3 transition-transform duration-300 ${isMobile ? "text-white/40" : "text-[#272D6D]/40"
               } ${isOpen ? 'rotate-180' : ''}`} />
@@ -262,6 +267,11 @@ const Navbar = () => {
                       >
                         <span className={`text-2xl font-bold transition-colors ${isSubMenuOpen ? 'text-[#F36440]' : 'text-white hover:text-[#F36440]'}`}>
                           {link.label}
+                          {link.label === "Solutions" && (
+                            <span className="ml-3 px-2 py-0.5 text-[10px] font-black uppercase tracking-widest bg-[#F36440] text-white rounded-md align-middle inline-block">
+                              Coming Soon
+                            </span>
+                          )}
                         </span>
                         {hasItems && (
                           <motion.div

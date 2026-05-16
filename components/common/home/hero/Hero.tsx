@@ -261,12 +261,12 @@ const Hero = () => {
                                 onMouseLeave={handleMouseLeave}
                                 onClick={() => setActiveSection(item.id as Section)}
                                 whileHover={{ y: -6 }}
-                                className="relative group flex flex-col items-center gap-5 cursor-pointer shrink-0 py-2"
+                                className="relative group flex flex-col items-center gap-2 cursor-pointer shrink-0 py-2"
                             >
                                 <motion.div
                                     animate={{
                                         scale: isActive ? 1.2 : 0.9,
-                                        y: isActive ? -6 : 0
+                                        y: isActive ? -2 : 4
                                     }}
                                     transition={{ type: "spring", stiffness: 400, damping: 25 }}
                                     className={`relative z-10 transition-all scale-100 ${isActive ? 'text-[#F26341]' : 'text-white/60 group-hover:text-white/90'}`}
@@ -312,12 +312,12 @@ const Hero = () => {
                                     setHoveredSection(item.id as Section);
                                     setActiveSection(item.id as Section);
                                 }}
-                                className="relative flex flex-col items-center gap-1.5 cursor-pointer shrink-0 py-2 snap-center min-w-[110px] max-[360px]:min-w-[100px]"
+                                className="relative flex flex-col items-center gap-0.5 cursor-pointer shrink-0 py-2 snap-center min-w-[110px] max-[360px]:min-w-[100px]"
                             >
                                 <motion.div
                                     animate={{
                                         scale: isActive ? 1.2 : 0.9,
-                                        y: isActive ? -6 : 0
+                                        y: isActive ? -2 : 3
                                     }}
                                     transition={{ type: "spring", stiffness: 400, damping: 25 }}
                                     className={`relative z-10 transition-all scale-80 ${isActive ? 'text-[#F26341]' : 'text-white/60'}`}

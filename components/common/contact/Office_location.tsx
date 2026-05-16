@@ -14,41 +14,26 @@ const offices = [
         mapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d209.73433677522195!2d77.0855606902528!3d28.497138621507244!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d190007e78df1%3A0x47a79c948d1df2f1!2sSharkship!5e1!3m2!1sen!2sin!4v1777446251728!5m2!1sen!2sin"
     },
     {
-        city: "Mumbai",
+        city: "Dankuni",
         title: "Regional Office",
-        address: "Location details pending... \n(Will be updated soon)",
-        mapUrl: "#",
-        mapEmbedUrl: ""
+        address: "Dankuni, West Bengal 712311, India",
+        mapUrl: "https://www.google.com/maps/place/22%C2%B040'44.4%22N+88%C2%B018'07.3%22E/@22.6789917,88.3020308,17z/",
+        mapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3523.141797742998!2d88.29945587530362!3d22.678991679416107!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjLCsDQwJzQ0LjQiTiA4OMKwMTgnMDcuMyJF!5e1!3m2!1sen!2sin!4v1778905407225!5m2!1sen!2sin"
     },
     {
-        city: "Chennai",
+        city: "Nipani",
         title: "Regional Office",
-        address: "Location details pending... \n(Will be updated soon)",
-        mapUrl: "#",
-        mapEmbedUrl: ""
+        address: "Athani Residency Park, NH Service Rd, Nipani, Karnataka 591237, India",
+        mapUrl: "https://www.google.com/maps/place/Athani+Residency+Park/@16.3963927,74.3745363,17z/",
+        mapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3663.0939442400013!2d74.37453626!3d16.39639267!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc0f3713ee81509%3A0xdeb8db897587a2db!2sAthani%20Residency%20Park!5e1!3m2!1sen!2sin!4v1778905453523!5m2!1sen!2sin"
     },
     {
-        city: "Kolkata",
+        city: "Haridwar",
         title: "Regional Office",
-        address: "Location details pending... \n(Will be updated soon)",
-        mapUrl: "#",
-        mapEmbedUrl: ""
-    },
-    {
-        city: "Bangalore",
-        title: "Regional Office",
-        address: "Location details pending... \n(Will be updated soon)",
-        mapUrl: "#",
-        mapEmbedUrl: ""
-    },
-    {
-        city: "Hyderabad",
-        title: "Regional Office",
-        address: "Location details pending... \n(Will be updated soon)",
-        mapUrl: "#",
-        mapEmbedUrl: ""
-    },
-
+        address: "Sector 3, BHEL Haridwar, Uttarakhand 249403, India",
+        mapUrl: "https://www.google.com/maps/place/29%C2%B056'03.4%22N+78%C2%B004'32.5%22E/@29.9342836,78.0757002,17z/",
+        mapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3309.002391271959!2d78.07312217554953!3d29.934283574979215!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjnCsDU2JzAzLjQiTiA3OMKwMDQnMzIuNSJF!5e1!3m2!1sen!2sin!4v1778905472807!5m2!1sen!2sin"
+    }
 ];
 
 export default function Office_location() {
@@ -86,8 +71,8 @@ export default function Office_location() {
                     </motion.p>
                 </div>
 
-                {/* 3D Cards Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12">
+                {/* 3D Cards Grid - Balanced for 4 cards */}
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-x-8 gap-y-12 max-w-5xl mx-auto">
                     {offices.map((office, idx) => (
                         <motion.div
                             initial={{ opacity: 0, y: 30 }}
@@ -95,10 +80,11 @@ export default function Office_location() {
                             viewport={{ once: true }}
                             transition={{ duration: 0.5, delay: idx * 0.1 }}
                             key={idx}
-                            /* Center the 7th card in the 3rd row (which has 3 columns) */
-                            className={idx === 6 ? "lg:col-start-2" : ""}
                         >
-                            <CardContainer containerClassName="py-0 flex items-center justify-center h-full">
+                            <CardContainer 
+                                className="w-full"
+                                containerClassName="py-0 flex items-center justify-center h-full w-full"
+                            >
                                 <CardBody className="bg-[#FAFAFA] border border-gray-100 relative group/card hover:shadow-2xl hover:shadow-[#272D6D]/5 w-full h-full rounded-[1.5rem] p-6 lg:p-8 flex flex-col justify-between transition-all duration-300 !w-full !h-auto min-h-[460px]">
 
                                     <div className="flex flex-col gap-5">

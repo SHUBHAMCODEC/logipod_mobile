@@ -107,6 +107,11 @@ export default function Navbar() {
                     }`}
                 >
                   {link.label}
+                  {link.label === "Solutions" && (
+                    <span className="ml-1 px-1.5 py-0.5 text-[8px] font-black uppercase tracking-tighter bg-[#F26341] text-white rounded-[4px] leading-none">
+                      Coming Soon
+                    </span>
+                  )}
                   {link.items && (
                     <ChevronDown className="w-4 h-4 opacity-70 transition-transform duration-300 group-hover:-rotate-180" />
                   )}
@@ -254,6 +259,11 @@ export default function Navbar() {
                       }`}
                   >
                     {link.label}
+                    {link.label === "Solutions" && (
+                      <span className="ml-2 px-1.5 py-0.5 text-[9px] font-black uppercase tracking-widest bg-[#F26341] text-white rounded-md">
+                        Coming Soon
+                      </span>
+                    )}
                   </Link>
                 </div>
 

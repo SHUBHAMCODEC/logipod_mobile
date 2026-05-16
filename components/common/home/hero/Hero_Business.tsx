@@ -80,38 +80,38 @@ const Hero_Business: React.FC<HeroBusinessProps> = ({ onClose }) => {
     };
 
     const CloseButton = () => (
-      <>
-        {/* =========================================
+        <>
+            {/* =========================================
             MOBILE CLOSE BUTTON
             Edit this block to change Mobile (X) position
         ========================================= */}
-        <div className="hidden absolute -top-12 right-4 z-[250]">
-          <motion.button
-            initial={{ scale: 0.8, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            whileTap={{ scale: 0.9 }}
-            onClick={onClose}
-            className="w-10 h-10 rounded-full border border-white/30 bg-black/50 text-white flex items-center justify-center backdrop-blur-md"
-          >
-            <X className="w-5 h-5" />
-          </motion.button>
-        </div>
+            <div className="hidden absolute -top-12 right-4 z-[250]">
+                <motion.button
+                    initial={{ scale: 0.8, opacity: 0 }}
+                    animate={{ scale: 1, opacity: 1 }}
+                    whileTap={{ scale: 0.9 }}
+                    onClick={onClose}
+                    className="w-10 h-10 rounded-full border border-white/30 bg-black/50 text-white flex items-center justify-center backdrop-blur-md"
+                >
+                    <X className="w-5 h-5" />
+                </motion.button>
+            </div>
 
-        {/* =========================================
+            {/* =========================================
             PC / DESKTOP CLOSE BUTTON
             Edit this block to change PC (X) position
         ========================================= */}
-        <div className="hidden md:block absolute top-4 right-4 z-[70]">
-          <motion.button
-            initial={{ scale: 0.8, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            onClick={onClose}
-            className="group w-12 h-12 rounded-full border-2 border-white/40 bg-black/40 hover:bg-white hover:border-white hover:scale-110 transition-all duration-300 cursor-pointer flex items-center justify-center backdrop-blur-xl"
-          >
-            <X className="w-5 h-5 text-white group-hover:text-black transition-colors" />
-          </motion.button>
-        </div>
-      </>
+            <div className="hidden md:block absolute top-4 right-4 z-[70]">
+                <motion.button
+                    initial={{ scale: 0.8, opacity: 0 }}
+                    animate={{ scale: 1, opacity: 1 }}
+                    onClick={onClose}
+                    className="group w-12 h-12 rounded-full border-2 border-white/40 bg-black/40 hover:bg-white hover:border-white hover:scale-110 transition-all duration-300 cursor-pointer flex items-center justify-center backdrop-blur-xl"
+                >
+                    <X className="w-5 h-5 text-white group-hover:text-black transition-colors" />
+                </motion.button>
+            </div>
+        </>
     );
 
     const InputStyles = "w-full bg-black/25 border border-white/40 rounded-[5px] h-[52px] px-6 text-white font-bold text-[13px] placeholder:text-white/60 focus:bg-black/40 focus:border-[#F26341] outline-none transition-all uppercase tracking-[0.15em] leading-none";
@@ -258,7 +258,7 @@ const Hero_Business: React.FC<HeroBusinessProps> = ({ onClose }) => {
                         initial="hidden"
                         animate="visible"
                         exit="exit"
-                        className={`w-full ${flow === "service" ? 'max-w-[1000px]' : 'max-w-[900px]'} flex flex-col items-center relative -mt-6 md:-mt-16`}
+                        className={`w-full ${flow === "service" ? 'max-w-[1000px]' : 'max-w-[900px]'} flex flex-col items-center relative mt-10 md:mt-16`}
                     >
                         <div className="absolute inset-0 bg-black/40 backdrop-blur-[80px] rounded-[15px] border border-white/10 -z-10 shadow-2xl" />
                         <div className="w-full space-y-3 p-4 md:p-6 pb-6 md:pb-8 relative">

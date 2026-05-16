@@ -65,14 +65,14 @@ export default function AboutClients() {
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.05 }}
-              className="flex items-center justify-center grayscale hover:grayscale-0 transition-all duration-500 hover:scale-110 cursor-pointer p-2 group"
+              className="flex items-center justify-center transition-all duration-500 hover:scale-110 cursor-pointer p-2 group"
             >
               <Image
                 src={client.logo}
                 alt={client.name}
                 width={180}
                 height={90}
-                className="max-h-16 w-auto object-contain opacity-70 group-hover:opacity-100 transition-opacity"
+                className="max-h-16 w-auto object-contain opacity-100 transition-opacity"
               />
             </motion.div>
           ))}
