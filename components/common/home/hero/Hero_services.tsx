@@ -50,8 +50,8 @@ const Hero_services: React.FC<HeroServicesProps> = ({ onClose }) => {
       icon: <Ship className="w-6 h-6 text-[#F26341]" />,
       desc: "Global FCL & LCL shipping solutions.",
       subServices: [
-        { title: "FCL (Full Container)", desc: "Maximum capacity for large shipments.", status: "available", path: "/Exim" },
-        { title: "LCL (Shared Container)", desc: "Cost-effective for smaller loads.", status: "available", path: "/Exim" }
+        { title: "FCL (Full Container)", desc: "Maximum capacity for large shipments.", status: "available", path: "/exim" },
+        { title: "LCL (Shared Container)", desc: "Cost-effective for smaller loads.", status: "available", path: "/exim" }
       ]
     },
     {

@@ -10,133 +10,133 @@ const testimonials = [
         name: "Supply Chain Director",
         company: "Godrej",
         content: "Logipod has completely transformed our supply chain visibility. Their tech-driven approach and real-time tracking have reduced our operational bottlenecks by 40% in just six months.",
-        logo: "/images/asso_img/godrej logo.svg",
+        logo: "/images/asso_img/godrej_logo.svg",
         rating: 5
     },
     {
         name: "Operations Head",
         company: "Polycab India",
         content: "The level of precision and reliability Logipod offers is unmatched. Their commitment to 'invisible logistics' allows us to focus entirely on our core business while they handle the complexities.",
-        logo: "/images/asso_img/polycab india limited logo.svg",
+        logo: "/images/asso_img/polycab_india_limited_logo.svg",
         rating: 5
     },
     {
         name: "Logistics Lead",
         company: "Uflex",
         content: "Switching to Logipod was the best decision for our pan-India distribution. Their FTL and warehousing solutions are highly optimized, ensuring our products reach the market faster than ever.",
-        logo: "/images/asso_img/uflex limited logo.svg",
+        logo: "/images/asso_img/uflex_limited_logo.svg",
         rating: 5
     },
     {
         name: "Supply Chain Manager",
         company: "Greenply",
         content: "International freight forwarding has never been smoother. Logipod's digital documentation and compliance management saved us hundreds of man-hours last quarter.",
-        logo: "/images/asso_img/greenply industries limited logo.svg",
+        logo: "/images/asso_img/greenply_industries_limited_logo.svg",
         rating: 5
     },
     {
         name: "Regional Head",
         company: "Prince Pipes",
         content: "As a growing business, we needed a logistics partner that could scale with us. Logipod's flexible warehousing and hyper-local delivery network have been instrumental in our growth.",
-        logo: "/images/asso_img/prince pipes & fittings ltd. logo.svg",
+        logo: "/images/asso_img/prince_pipes_&_fittings_ltd._logo.svg",
         rating: 5
     },
     {
         name: "VP Operations",
         company: "VIP Industries",
         content: "The speed and efficiency of their cross-border solutions are phenomenal. We've seen a 25% reduction in shipping times and zero customs delays since partnering with them.",
-        logo: "/images/asso_img/vip logo.svg",
+        logo: "/images/asso_img/vip_logo.svg",
         rating: 5
     },
     {
         name: "General Manager",
         company: "C&S Electric",
         content: "Their AI-driven route optimization is a game-changer. It's not just about moving cargo; it's about moving it smarter, faster, and more sustainably.",
-        logo: "/images/asso_img/c & s electric logo.svg",
+        logo: "/images/asso_img/c_&_s_electric_logo.svg",
         rating: 5
     },
     {
         name: "Operations Manager",
         company: "Attero Recycling",
         content: "Specialized logistics requires extreme precision. Logipod's fleet and constant monitoring have ensured our sensitive materials reach destinations in perfect condition.",
-        logo: "/images/asso_img/attero recycling pvt ltd logo.svg",
+        logo: "/images/asso_img/attero_recycling_pvt_ltd_logo.svg",
         rating: 5
     },
     {
         name: "Strategic Operations Lead",
         company: "Asahi India Glass",
         content: "Logipod's specialized handling of fragile glass cargo is remarkable. Their fleet monitoring and safe-transit protocols have practically eliminated in-transit breakage.",
-        logo: "/images/asso_img/Asahi.svg",
+        logo: "/images/asso_img/asahi.svg",
         rating: 5
     },
     {
         name: "Logistics Coordinator",
         company: "ASP",
         content: "Reliability is the cornerstone of our operations. Logipod consistently delivers on their promises with professional execution and proactive communication.",
-        logo: "/images/asso_img/ASP.svg",
+        logo: "/images/asso_img/asp.svg",
         rating: 5
     },
     {
         name: "Supply Chain Head",
         company: "Andhitech",
         content: "The technological edge Logipod provides has given us a significant advantage in market responsiveness. Their platform is intuitive and powerful.",
-        logo: "/images/asso_img/andhitech and hitech industries limited.svg",
+        logo: "/images/asso_img/andhitech_and_hitech_industries_limited.svg",
         rating: 5
     },
     {
         name: "Export Manager",
         company: "Choksi Exports",
         content: "Handling global exports requires a partner who understands international trade. Logipod is that partner for us, providing seamless end-to-end support.",
-        logo: "/images/asso_img/choksi exports logo.svg",
+        logo: "/images/asso_img/choksi_exports_logo.svg",
         rating: 5
     },
     {
         name: "Technical Director",
         company: "DB Cables",
         content: "Their infrastructure and commitment to safety are evident in every shipment. We trust Logipod with our most critical distribution needs.",
-        logo: "/images/asso_img/db cables logo.svg",
+        logo: "/images/asso_img/db_cables_logo.svg",
         rating: 5
     },
     {
         name: "Operations Lead",
         company: "Fivestar Dehydration",
         content: "Efficient logistics is vital for fresh exports. Logipod's speed and handling quality ensure our products maintain their premium standard globally.",
-        logo: "/images/asso_img/fivestar dehydration private limited logo.svg",
+        logo: "/images/asso_img/fivestar_dehydration_private_limited_logo.svg",
         rating: 5
     },
     {
         name: "Supply Chain Executive",
         company: "Gold Plus Float Glass",
         content: "The scale of their network and the precision of their tracking have significantly improved our national distribution strategy.",
-        logo: "/images/asso_img/gold plus float glass private limited logo.svg",
+        logo: "/images/asso_img/gold_plus_float_glass_private_limited_logo.svg",
         rating: 5
     },
     {
         name: "Global Logistics Head",
         company: "Kore International",
         content: "Logipod's expertise in cross-border trade and their robust digital tools make them an invaluable partner for our global operations.",
-        logo: "/images/asso_img/kore international logo.svg",
+        logo: "/images/asso_img/kore_international_logo.svg",
         rating: 5
     },
     {
         name: "Project Manager",
         company: "United Foods",
         content: "Consistent quality and timely delivery are what we get with Logipod. They understand the nuances of food logistics perfectly.",
-        logo: "/images/asso_img/united foods logo.svg",
+        logo: "/images/asso_img/united_foods_logo.svg",
         rating: 5
     },
     {
         name: "Regional Operations",
         company: "Utkarsh India",
         content: "We've seen a measurable improvement in our delivery timelines since partnering with Logipod. Highly recommended for scalable businesses.",
-        logo: "/images/asso_img/utkarsh india limited logo.svg",
+        logo: "/images/asso_img/utkarsh_india_limited_logo.svg",
         rating: 5
     },
     {
         name: "Fleet Manager",
         company: "VSL Logistics",
         content: "Logipod represents the future of logistics. Their focus on technology and efficiency is exactly what the modern supply chain needs.",
-        logo: "/images/asso_img/vsl logistics logo.svg",
+        logo: "/images/asso_img/vsl_logistics_logo.svg",
         rating: 5
     }
 ];

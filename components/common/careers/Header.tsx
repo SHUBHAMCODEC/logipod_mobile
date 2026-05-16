@@ -14,16 +14,10 @@ const Header = () => {
   };
 
   return (
-    <section className="relative w-full min-h-screen flex items-center justify-center overflow-hidden bg-[#272D6D] pt-20">
+    <section className="relative w-full min-h-screen flex items-center justify-center overflow-hidden bg-[#272D6D] pt-40 md:pt-52">
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
-        <Image
-          src="/careers_hero_bg_1777453236478.webp"
-          alt="Careers at Logipod"
-          fill
-          className="object-cover opacity-40 mix-blend-overlay"
-          priority
-        />
+
         <div className="absolute inset-0 bg-gradient-to-b from-[#272D6D]/80 via-transparent to-[#272D6D]" />
       </div>
 
@@ -33,13 +27,13 @@ const Header = () => {
 
       <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-5xl mx-auto text-center">
-          
+
           {/* Main Heading */}
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-5xl md:text-7xl font-black text-white leading-[1.1] mb-8 tracking-tighter"
+            className="text-5xl md:text-7xl font-black text-white leading-[1.1] mb-1 tracking-tighter"
           >
             Don't Just Move the World. <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#F26341] to-[#ff8e72]">
@@ -54,8 +48,8 @@ const Header = () => {
             transition={{ duration: 0.8, delay: 0.3 }}
             className="text-lg md:text-2xl text-gray-300 mb-12 max-w-3xl mx-auto leading-relaxed font-medium"
           >
-            At <span className="text-[#F26341] font-black">Logipod</span>, we don’t just move freight; 
-            we architect the intelligence behind global trade. Join our elite team and 
+            At <span className="text-[#F26341] font-black">Logipod</span>, we don’t just move freight;
+            we architect the intelligence behind global trade. Join our elite team and
             engineer the very future of human connection.
           </motion.p>
 
@@ -66,7 +60,7 @@ const Header = () => {
             transition={{ duration: 0.8, delay: 0.5 }}
             className="flex flex-col sm:flex-row items-center justify-center gap-4"
           >
-            <button 
+            <button
               onClick={scrollToPositions}
               className="group relative px-12 py-6 bg-[#F26341] hover:bg-[#d95336] text-white font-black text-sm uppercase tracking-[0.2em] rounded-xl transition-all duration-300 flex items-center gap-3 overflow-hidden shadow-[0_20px_50px_rgba(242,99,65,0.3)] cursor-pointer"
             >
@@ -80,7 +74,7 @@ const Header = () => {
       </div>
 
       {/* Scroll Indicator */}
-      <motion.div 
+      <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.5, duration: 1 }}

@@ -31,8 +31,8 @@ const offices = [
         city: "Haridwar",
         title: "Regional Office",
         address: "Sector 3, BHEL Haridwar, Uttarakhand 249403, India",
-        mapUrl: "https://www.google.com/maps/place/29%C2%B056'03.4%22N+78%C2%B004'32.5%22E/@29.9342836,78.0757002,17z/",
-        mapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3309.002391271959!2d78.07312217554953!3d29.934283574979215!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjnCsDU2JzAzLjQiTiA3OMKwMDQnMzIuNSJF!5e1!3m2!1sen!2sin!4v1778905472807!5m2!1sen!2sin"
+        mapUrl: "https://www.google.com/maps/place/29%C2%B056'03.4%22N+78%C2%B004'32.5%22E/@29.9342836,78.0731222,17z/",
+        mapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d2773.2591469707845!2d78.07312217554953!3d29.934283574979215!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjnCsDU2JzAzLjQiTiA3OMKwMDQnMzIuNSJF!5e1!3m2!1sen!2sin!4v1778922519597!5m2!1sen!2sin"
     }
 ];
 
@@ -80,6 +80,7 @@ export default function Office_location() {
                             viewport={{ once: true }}
                             transition={{ duration: 0.5, delay: idx * 0.1 }}
                             key={idx}
+                            className="w-full h-full block"
                         >
                             <CardContainer 
                                 className="w-full"

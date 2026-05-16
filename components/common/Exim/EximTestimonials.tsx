@@ -10,35 +10,35 @@ const testimonials = [
         company: "United Foods",
         name: "Director of Exports",
         content: "We have been working with Logipod for multiple shipments, and our experience has been consistently positive. Their team is highly supportive, especially when it comes to freight management, ensuring competitive rates and smooth coordination throughout the process.   Additionally, their documentation services are reliable and well-handled, which helps avoid delays and ensures hassle-free shipments. Overall, Logipod has proven to be a dependable forwarding partner, and we appreciate their professionalism and efficiency.",
-        logo: "/images/asso_img/united foods logo.svg",
+        logo: "/images/asso_img/united_foods_logo.svg",
         rating: 5
     },
     {
         company: "Choksi Exports",
         name: "Global Trade Manager",
         content: "Handling global exports requires a partner who understands complex international trade compliance. Logipod is that partner for us, providing seamless support.",
-        logo: "/images/asso_img/choksi exports logo.svg",
+        logo: "/images/asso_img/choksi_exports_logo.svg",
         rating: 5
     },
     {
         company: "Fivestar Dehydration",
         name: "Operations Lead",
         content: "The level of transparency and real-time oversight Logipod offers in EXIM is a game-changer. Tracking our industrial cargo across corridors gives us total peace of mind.",
-        logo: "/images/asso_img/fivestar dehydration private limited logo.svg",
+        logo: "/images/asso_img/fivestar_dehydration_private_limited_logo.svg",
         rating: 5
     },
     {
         company: "Kore International",
         name: "Global Logistics Head",
         content: "Logipod's expertise in cross-border trade and their robust digital tools make them an invaluable partner for our global operations and customs management.",
-        logo: "/images/asso_img/kore international logo.svg",
+        logo: "/images/asso_img/kore_international_logo.svg",
         rating: 5
     },
     {
         company: "Godrej",
         name: "Supply Chain Director",
         content: "Beyond FTL, Logipod has transformed our international shipping visibility. Their digital documentation handling saved us hundreds of man-hours last quarter.",
-        logo: "/images/asso_img/godrej logo.svg",
+        logo: "/images/asso_img/godrej_logo.svg",
         rating: 5
     }
 ];

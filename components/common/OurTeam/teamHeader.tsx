@@ -2,22 +2,12 @@
 
 import React from "react";
 import { motion } from "motion/react";
-import Image from "next/image";
 
 const TeamHeader = () => {
   return (
     <section className="relative w-full h-[60vh] md:h-[70vh] flex items-center justify-center overflow-hidden bg-[#272D6D]">
-      {/* Background Image with Overlay */}
-      <div className="absolute inset-0 z-0">
-        <Image
-          src="/team_header_bg_india_1777456235682.webp" // This image needs to be in the public folder
-          alt="Logipod Team Background"
-          fill
-          className="object-cover opacity-50 grayscale-[20%]"
-          priority
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#272D6D]/90 via-[#272D6D]/40 to-[#272D6D]" />
-      </div>
+      {/* Background gradient overlay */}
+      <div className="absolute inset-0 z-0 bg-gradient-to-b from-[#272D6D]/95 via-[#272D6D]/70 to-[#272D6D]" />
 
       {/* Decorative Accents */}
       <div className="absolute top-0 left-0 w-full h-full pointer-events-none">

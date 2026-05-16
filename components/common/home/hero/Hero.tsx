@@ -59,7 +59,7 @@ const Hero = () => {
         track: "/images/home/ind_logis21.webp",
         services: "/images/home/ind_logis26.webp",
         info: "/images/home/ind_logis24.webp",
-        jobs: "/images/home/getToKnow.webp",
+        jobs: "/images/home/gettoknow.webp",
     };
 
     const getActiveBg = () => {
@@ -300,7 +300,7 @@ const Hero = () => {
                 MOBILE BOTTOM DOCK
                 Optimized for Small Android (360), iPhone (390), Pro Max (430)
             ========================================= */}
-            <div className="block md:hidden relative z-30 w-screen h-[110px] max-[430px]:h-[105px] pb-0 shrink-0 mb-[60px] max-[360px]:mb-[40px] max-[430px]:mb-[50px] sm:mb-[100px] left-1/2 -translate-x-1/2">
+            <div className="block md:hidden relative z-30 w-screen h-[110px] max-[430px]:h-[105px] pb-0 shrink-0 mb-[30px] max-[360px]:mb-[20px] max-[430px]:mb-[25px] sm:mb-[80px] left-1/2 -translate-x-1/2">
                 <div className="h-full w-full flex flex-nowrap overflow-x-auto overflow-y-hidden justify-start items-center gap-12 border-t border-white/10 pt-1 pb-8 px-6 snap-x snap-mandatory touch-pan-x">
                     {bottomLinks.map((item) => {
                         const isActive = activeSection === item.id || hoveredSection === item.id;

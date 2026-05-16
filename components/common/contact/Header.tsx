@@ -12,16 +12,16 @@ export default function Header() {
 
     // Premium B2B Clients / Partners with Logos
     const clients = [
-        { name: "Godrej & Boyce", image: "/images/asso_img/godrej logo.svg" },
-        { name: "Polycab India", image: "/images/asso_img/polycab india limited logo.svg" },
-        { name: "Kore International", image: "/images/asso_img/kore international logo.svg" },
-        { name: "Attero Recycling", image: "/images/asso_img/attero recycling pvt ltd logo.svg" },
-        { name: "C&S Electricals", image: "/images/asso_img/c & s electric logo.svg" },
-        { name: "United Foods", image: "/images/asso_img/united foods logo.svg" },
-        { name: "Fivestar", image: "/images/asso_img/fivestar dehydration private limited logo.svg" },
-        { name: "Uflex Limited", image: "/images/asso_img/uflex limited logo.svg" },
-        { name: "Greenply", image: "/images/asso_img/greenply industries limited logo.svg" },
-        { name: "VIP Industries", image: "/images/asso_img/vip logo.svg" }
+        { name: "Godrej & Boyce", image: "/images/asso_img/godrej_logo.svg" },
+        { name: "Polycab India", image: "/images/asso_img/polycab_india_limited_logo.svg" },
+        { name: "Kore International", image: "/images/asso_img/kore_international_logo.svg" },
+        { name: "Attero Recycling", image: "/images/asso_img/attero_recycling_pvt_ltd_logo.svg" },
+        { name: "C&S Electricals", image: "/images/asso_img/c_&_s_electric_logo.svg" },
+        { name: "United Foods", image: "/images/asso_img/united_foods_logo.svg" },
+        { name: "Fivestar", image: "/images/asso_img/fivestar_dehydration_private_limited_logo.svg" },
+        { name: "Uflex Limited", image: "/images/asso_img/uflex_limited_logo.svg" },
+        { name: "Greenply", image: "/images/asso_img/greenply_industries_limited_logo.svg" },
+        { name: "VIP Industries", image: "/images/asso_img/vip_logo.svg" }
     ];
 
     // Duplicate the clients array to create a seamless infinite scroll
@@ -117,9 +117,9 @@ export default function Header() {
                             <img 
                                 src={client.image} 
                                 alt={client.name} 
-                                className="h-12 w-auto object-contain grayscale brightness-200 opacity-60 group-hover:grayscale-0 group-hover:brightness-100 group-hover:opacity-100 transition-all duration-500"
+                                className="h-12 w-auto object-contain grayscale-0 brightness-100 opacity-100 md:grayscale md:brightness-200 md:opacity-60 group-hover:grayscale-0 group-hover:brightness-100 group-hover:opacity-100 transition-all duration-500"
                             />
-                            <h3 className="text-xl md:text-2xl font-black text-transparent bg-clip-text bg-white/20 uppercase tracking-[0.15em] group-hover:bg-white/90 transition-all duration-500 whitespace-nowrap">
+                            <h3 className="text-xl md:text-2xl font-black text-transparent bg-clip-text bg-white/90 md:bg-white/20 uppercase tracking-[0.15em] group-hover:bg-white/90 transition-all duration-500 whitespace-nowrap">
                                 {client.name}
                             </h3>
                         </div>

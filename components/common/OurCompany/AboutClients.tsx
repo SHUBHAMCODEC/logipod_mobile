@@ -6,18 +6,18 @@ import { motion, AnimatePresence } from "motion/react";
 import Image from "next/image";
 
 const clients = [
-  { name: "Godrej", logo: "/images/asso_img/godrej logo.svg" },
-  { name: "Polycab", logo: "/images/asso_img/polycab india limited logo.svg" },
-  { name: "Uflex", logo: "/images/asso_img/uflex limited logo.svg" },
-  { name: "Greenply", logo: "/images/asso_img/greenply industries limited logo.svg" },
-  { name: "VIP Industries", logo: "/images/asso_img/vip logo.svg" },
-  { name: "Prince Pipes", logo: "/images/asso_img/prince pipes & fittings ltd. logo.svg" },
-  { name: "C&S Electric", logo: "/images/asso_img/c & s electric logo.svg" },
-  { name: "Attero Recycling", logo: "/images/asso_img/attero recycling pvt ltd logo.svg" },
-  { name: "Gold Plus Glass", logo: "/images/asso_img/gold plus float glass private limited logo.svg" },
-  { name: "Hamilton Housewares", logo: "/images/asso_img/hamilton housewares pvt ltd logo.svg" },
-  { name: "Utkarsh India", logo: "/images/asso_img/utkarsh india limited logo.svg" },
-  { name: "VSL Logistics", logo: "/images/asso_img/vsl logistics logo.svg" },
+  { name: "Godrej", logo: "/images/asso_img/godrej_logo.svg" },
+  { name: "Polycab", logo: "/images/asso_img/polycab_india_limited_logo.svg" },
+  { name: "Uflex", logo: "/images/asso_img/uflex_limited_logo.svg" },
+  { name: "Greenply", logo: "/images/asso_img/greenply_industries_limited_logo.svg" },
+  { name: "VIP Industries", logo: "/images/asso_img/vip_logo.svg" },
+  { name: "Prince Pipes", logo: "/images/asso_img/prince_pipes_&_fittings_ltd._logo.svg" },
+  { name: "C&S Electric", logo: "/images/asso_img/c_&_s_electric_logo.svg" },
+  { name: "Attero Recycling", logo: "/images/asso_img/attero_recycling_pvt_ltd_logo.svg" },
+  { name: "Gold Plus Glass", logo: "/images/asso_img/gold_plus_float_glass_private_limited_logo.svg" },
+  { name: "Hamilton Housewares", logo: "/images/asso_img/hamilton_housewares_pvt_ltd_logo.svg" },
+  { name: "Utkarsh India", logo: "/images/asso_img/utkarsh_india_limited_logo.svg" },
+  { name: "VSL Logistics", logo: "/images/asso_img/vsl_logistics_logo.svg" },
 ];
 
 export default function AboutClients() {

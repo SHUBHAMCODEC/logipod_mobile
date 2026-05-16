@@ -9,9 +9,11 @@ import { Search, ChevronDown, Menu, X, ArrowRight } from "lucide-react";
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const [searchQuery, setSearchQuery] = useState("");
   const [isSearchFocused, setIsSearchFocused] = useState(false);
   const pathname = usePathname();
+  const navRef = React.useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -25,10 +27,22 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Close mobile menu on route change
+  // Close mobile menu and dropdown on route change
   useEffect(() => {
     setIsMobileMenuOpen(false);
+    setOpenDropdown(null);
   }, [pathname]);
+
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      if (navRef.current && !navRef.current.contains(e.target as Node)) {
+        setOpenDropdown(null);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
 
   const navLinks = [
     { label: "Home", href: "/" },
@@ -37,15 +51,15 @@ export default function Navbar() {
       href: "/#",
       items: [
         { name: "Full Truck Load", href: "/ftl" },
-        { name: "Freight Forwarding", href: "/Exim" },
+        { name: "Freight Forwarding", href: "/exim" },
       ],
     },
     {
       label: "Solutions",
       href: "/solutions",
       items: [
-        { name: "Warehousing", href: "/solutions/warehousing" },
-        { name: "Yard Management", href: "/solutions/yard-management" },
+        { name: "Warehousing", href: "/#", comingSoon: true },
+        { name: "Yard Management", href: "/#", comingSoon: true },
       ],
     },
     {
@@ -84,7 +98,7 @@ export default function Navbar() {
         <Link href="/" className="flex-shrink-0 group flex items-center">
           <div className="relative overflow-hidden">
             <Image
-              src="/images/home/Logipod Logo.svg"
+              src="/images/home/logipod_logo.svg"
               alt="Logipod Logo"
               width={145}
               height={48}
@@ -95,47 +109,57 @@ export default function Navbar() {
         </Link>
 
         {/* Center: Desktop Navigation */}
-        <nav className="hidden lg:flex items-center gap-1 xl:gap-2">
+        <nav ref={navRef} className="hidden lg:flex items-center gap-1 xl:gap-2">
           {navLinks.map((link) => {
             const isActive = pathname.startsWith(link.href) && link.href !== "/";
+            const isOpen = openDropdown === link.label;
 
             return (
-              <div key={link.label} className="relative group px-2 xl:px-3 py-2">
-                <Link
-                  href={link.href}
-                  className={`flex items-center gap-1.5 text-[15px] font-semibold transition-colors duration-300 ${isActive ? "text-[#F26341]" : "text-[#272D6D] group-hover:text-[#F26341]"
-                    }`}
-                >
-                  {link.label}
-                  {link.label === "Solutions" && (
-                    <span className="ml-1 px-1.5 py-0.5 text-[8px] font-black uppercase tracking-tighter bg-[#F26341] text-white rounded-[4px] leading-none">
-                      Coming Soon
-                    </span>
-                  )}
-                  {link.items && (
-                    <ChevronDown className="w-4 h-4 opacity-70 transition-transform duration-300 group-hover:-rotate-180" />
-                  )}
+              <div key={link.label} className="relative px-2 xl:px-3 py-2">
+                {link.items ? (
+                  <button
+                    onClick={() => setOpenDropdown(isOpen ? null : link.label)}
+                    className={`flex items-center gap-1.5 text-[15px] font-semibold transition-colors duration-300 ${isActive || isOpen ? "text-[#F26341]" : "text-[#272D6D] hover:text-[#F26341]"}`}
+                  >
+                    {link.label}
+                    {link.label === "Solutions" && (
+                      <span className="ml-1 px-1.5 py-0.5 text-[8px] font-black uppercase tracking-tighter bg-[#F26341] text-white rounded-[4px] leading-none">
+                        Coming Soon
+                      </span>
+                    )}
+                    <ChevronDown className={`w-4 h-4 opacity-70 transition-transform duration-300 ${isOpen ? "-rotate-180" : ""}`} />
+                    <span className={`absolute bottom-0 left-1/2 -translate-x-1/2 h-[2px] bg-[#F26341] transition-all duration-300 ${isActive || isOpen ? "w-1/2 opacity-100" : "w-0 opacity-0"}`} />
+                  </button>
+                ) : (
+                  <Link
+                    href={link.href}
+                    className={`flex items-center gap-1.5 text-[15px] font-semibold transition-colors duration-300 ${isActive ? "text-[#F26341]" : "text-[#272D6D] hover:text-[#F26341]"}`}
+                  >
+                    {link.label}
+                    <span className={`absolute bottom-0 left-1/2 -translate-x-1/2 h-[2px] bg-[#F26341] transition-all duration-300 ${isActive ? "w-1/2 opacity-100" : "w-0 opacity-0"}`} />
+                  </Link>
+                )}
 
-                  {/* Subtle active indicator line */}
-                  <span className={`absolute bottom-0 left-1/2 -translate-x-1/2 h-[2px] bg-[#F26341] transition-all duration-300 ${isActive ? "w-1/2 opacity-100" : "w-0 opacity-0 group-hover:w-1/2 group-hover:opacity-100"
-                    }`}></span>
-                </Link>
-
-                {/* Dropdown Menu - Glassmorphism style */}
+                {/* Dropdown Menu — click-controlled */}
                 {link.items && (
-                  <div className="absolute top-full left-1/2 -translate-x-1/2 pt-5 opacity-0 invisible translate-y-4 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 transition-all duration-400 ease-[cubic-bezier(0.22,1,0.36,1)] z-50">
-                    {/* Bridge invisible div to keep hover state */}
-                    <div className="absolute -top-5 left-0 w-full h-5 bg-transparent" />
-
+                  <div className={`absolute top-full left-1/2 -translate-x-1/2 pt-3 transition-all duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] z-50 ${
+                    isOpen ? "opacity-100 visible translate-y-0" : "opacity-0 invisible translate-y-2 pointer-events-none"
+                  }`}>
                     <div className="w-[240px] bg-white rounded-2xl shadow-[0_20px_50px_rgba(39,45,109,0.08)] border border-gray-100 overflow-hidden flex flex-col p-2.5 relative before:absolute before:top-0 before:left-0 before:w-full before:h-1 before:bg-gradient-to-r before:from-[#272D6D] before:to-[#F26341]">
-                      {link.items.map((item) => (
+                      {link.items.map((item: any) => (
                         <Link
                           key={item.name}
                           href={item.href}
+                          onClick={() => setOpenDropdown(null)}
                           className="relative px-4 py-3.5 text-[14px] font-semibold text-[#272D6D] rounded-xl transition-all duration-300 flex items-center justify-between group/item overflow-hidden hover:bg-gray-50"
                         >
-                          <span className="relative z-10 transition-transform duration-300 group-hover/item:translate-x-1">
+                          <span className="relative z-10 transition-transform duration-300 group-hover/item:translate-x-1 flex items-center gap-2">
                             {item.name}
+                            {item.comingSoon && (
+                              <span className="px-2 py-0.5 text-[9px] uppercase font-black tracking-wider bg-[#F26341]/10 text-[#F26341] rounded-full">
+                                Coming Soon
+                              </span>
+                            )}
                           </span>
                           <div className="w-6 h-6 rounded-full bg-white shadow-sm flex items-center justify-center opacity-0 -translate-x-4 group-hover/item:opacity-100 group-hover/item:translate-x-0 transition-all duration-300 relative z-10">
                             <ArrowRight className="w-3.5 h-3.5 text-[#F26341]" />
@@ -269,14 +293,21 @@ export default function Navbar() {
 
                 {link.items && (
                   <div className="pl-4 mt-2 mb-2 flex flex-col gap-3 border-l-2 border-gray-100/50">
-                    {link.items.map((item) => (
+                    {link.items.map((item: any) => (
                       <Link
                         key={item.name}
                         href={item.href}
                         className="text-[15px] font-semibold text-gray-500 hover:text-[#F26341] transition-colors flex items-center gap-2"
                       >
-                        <span className="w-1.5 h-1.5 rounded-full bg-gray-300"></span>
-                        {item.name}
+                        <span className="w-1.5 h-1.5 rounded-full bg-gray-300 shrink-0"></span>
+                        <div className="flex items-center gap-2 flex-wrap">
+                          <span>{item.name}</span>
+                          {item.comingSoon && (
+                            <span className="px-2 py-0.5 text-[9px] uppercase font-black tracking-wider bg-[#F26341]/10 text-[#F26341] rounded-full">
+                              Coming Soon
+                            </span>
+                          )}
+                        </div>
                       </Link>
                     ))}
                   </div>

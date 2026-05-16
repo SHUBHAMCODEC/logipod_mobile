@@ -63,7 +63,7 @@ export default function Footer() {
           <div className="lg:col-span-4 flex flex-col gap-6">
             <Link href="/" className="inline-block group">
               <Image
-                src="/images/home/Logipod Logo.svg"
+                src="/images/home/logipod_logo.svg"
                 alt="Logipod Logo"
                 width={160}
                 height={54}
@@ -104,10 +104,20 @@ export default function Footer() {
             </h3>
 
             <ul className="flex flex-col gap-4 mt-4">
-              <li><FooterLink href="/Exim">EXIM (Freight Forwarding)</FooterLink></li>
+              <li><FooterLink href="/exim">EXIM (Freight Forwarding)</FooterLink></li>
               <li><FooterLink href="/ftl">FTL (Full Truckload)</FooterLink></li>
-              <li><FooterLink href="/warehousing">Warehousing</FooterLink></li>
-              <li><FooterLink href="/tms">Tech Sol. (TMS)</FooterLink></li>
+              <li>
+                <div className="flex items-center gap-2">
+                  <FooterLink href="/#">Warehousing</FooterLink>
+                  <span className="px-2 py-0.5 text-[9px] uppercase font-black tracking-wider bg-[#F26341]/10 text-[#F26341] rounded-full">Coming Soon</span>
+                </div>
+              </li>
+              <li>
+                <div className="flex items-center gap-2">
+                  <FooterLink href="/#">TMS</FooterLink>
+                  <span className="px-2 py-0.5 text-[9px] uppercase font-black tracking-wider bg-[#272D6D]/10 text-[#272D6D] rounded-full">In-house Product</span>
+                </div>
+              </li>
             </ul>
           </div>
 

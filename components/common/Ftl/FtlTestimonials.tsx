@@ -10,70 +10,70 @@ const testimonials = [
     company: "Godrej",
     name: "Supply Chain Director",
     content: "Logipod's FTL network gave us exactly what we needed — dedicated capacity, zero delays, and real-time tracking across our entire auto-parts supply chain.",
-    logo: "/images/asso_img/godrej logo.svg",
+    logo: "/images/asso_img/godrej_logo.svg",
     rating: 5
   },
   {
     company: "Polycab India",
     name: "Operations Head",
     content: "The level of precision and reliability Logipod offers in FTL is unmatched. Their commitment to 'invisible logistics' allows us to focus entirely on our core business.",
-    logo: "/images/asso_img/polycab india limited logo.svg",
+    logo: "/images/asso_img/polycab_india_limited_logo.svg",
     rating: 5
   },
   {
     company: "Uflex",
     name: "Logistics Lead",
     content: "Switching to Logipod was the best decision for our pan-India distribution. Their FTL solutions are highly optimized, ensuring our products reach the market faster.",
-    logo: "/images/asso_img/uflex limited logo.svg",
+    logo: "/images/asso_img/uflex_limited_logo.svg",
     rating: 5
   },
   {
     company: "Greenply",
     name: "Supply Chain Manager",
     content: "Their FTL network is robust and highly reliable. We've seen a significant reduction in transit times and improved delivery predictability across all our lanes.",
-    logo: "/images/asso_img/greenply industries limited logo.svg",
+    logo: "/images/asso_img/greenply_industries_limited_logo.svg",
     rating: 5
   },
   {
     company: "Prince Pipes",
     name: "Regional Head",
     content: "As a growing business, we needed an FTL partner that could scale with us. Logipod's flexible fleet and hyper-local network have been instrumental in our growth.",
-    logo: "/images/asso_img/prince pipes & fittings ltd. logo.svg",
+    logo: "/images/asso_img/prince_pipes_&_fittings_ltd._logo.svg",
     rating: 5
   },
   {
     company: "VIP Industries",
     name: "VP Operations",
     content: "The speed and efficiency of their FTL solutions are phenomenal. We've seen a 25% reduction in shipping times since partnering with them for our primary lanes.",
-    logo: "/images/asso_img/vip logo.svg",
+    logo: "/images/asso_img/vip_logo.svg",
     rating: 5
   },
   {
     company: "Asahi India Glass",
     name: "Strategic Operations Lead",
     content: "Logipod's specialized handling of fragile glass in FTL shipments is remarkable. Their fleet monitoring has practically eliminated in-transit breakage.",
-    logo: "/images/asso_img/Asahi.svg",
+    logo: "/images/asso_img/asahi.svg",
     rating: 5
   },
   {
     company: "Attero Recycling",
     name: "Operations Manager",
     content: "Reliable FTL is the cornerstone of our operations. Logipod consistently delivers on their promises with professional execution and proactive communication.",
-    logo: "/images/asso_img/attero recycling pvt ltd logo.svg",
+    logo: "/images/asso_img/attero_recycling_pvt_ltd_logo.svg",
     rating: 5
   },
   {
     company: "ASP",
     name: "Logistics Coordinator",
     content: "Their tech-driven approach to FTL has completely transformed our supply chain visibility. The real-time tracking is a massive advantage for our team.",
-    logo: "/images/asso_img/ASP.svg",
+    logo: "/images/asso_img/asp.svg",
     rating: 5
   },
   {
     company: "DB Cables",
     name: "Technical Director",
     content: "Efficient FTL logistics is vital for our distribution. Logipod's speed and handling quality ensure our products maintain their premium standard nationally.",
-    logo: "/images/asso_img/db cables logo.svg",
+    logo: "/images/asso_img/db_cables_logo.svg",
     rating: 5
   }
 ];
@@ -114,7 +114,7 @@ const TestimonialCard = ({ testimonial, isActive }: { testimonial: any, isActive
                             src={testimonial.logo}
                             alt={testimonial.company}
                             fill
-                            className="object-contain p-2 grayscale brightness-200 opacity-80 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500"
+                            className="object-contain p-2 grayscale-0 brightness-100 opacity-100 md:grayscale md:brightness-200 md:opacity-80 group-hover:grayscale-0 group-hover:brightness-100 group-hover:opacity-100 transition-all duration-500"
                         />
                     </div>
                     <div className="flex-1 min-w-0">
