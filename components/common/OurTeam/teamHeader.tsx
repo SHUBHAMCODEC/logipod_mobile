@@ -5,7 +5,7 @@ import { motion } from "motion/react";
 
 const TeamHeader = () => {
   return (
-    <section className="relative w-full h-[60vh] md:h-[70vh] flex items-center justify-center overflow-hidden bg-[#272D6D]">
+    <section className="relative w-full h-[60vh] md:h-[70vh] flex items-center justify-center pt-20 md:pt-32 overflow-hidden bg-[#272D6D]">
       {/* Background gradient overlay */}
       <div className="absolute inset-0 z-0 bg-gradient-to-b from-[#272D6D]/95 via-[#272D6D]/70 to-[#272D6D]" />
 
@@ -26,7 +26,7 @@ const TeamHeader = () => {
               Our People, Our Power
             </span>
             
-            <h1 className="text-5xl md:text-7xl font-black text-white leading-tight mb-6 tracking-tighter">
+            <h1 className="text-5xl md:text-7xl font-black text-white leading-tight mb-1 tracking-tighter">
               Meet the Visionaries <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#F26341] to-[#ff8e72]">
                 Behind Logipod
